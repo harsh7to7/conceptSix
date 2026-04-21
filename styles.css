@@ -1103,6 +1103,12 @@ input, textarea, select {
 /* ---- SERVICES ---- */
 .services {
     padding-bottom: 0;
+    overflow: hidden;
+}
+
+.services .container {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
 }
 
 .services-title {
@@ -1114,7 +1120,7 @@ input, textarea, select {
 }
 
 .services-track-wrapper {
-    overflow: hidden;
+    overflow: visible;
     padding: 2rem 0 6rem;
 }
 

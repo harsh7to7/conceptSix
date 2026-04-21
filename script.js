@@ -417,18 +417,19 @@
     const servicesTrack = document.getElementById('servicesTrack');
     if (servicesTrack) {
         const cards = servicesTrack.querySelectorAll('.service-card');
-        const totalScroll = servicesTrack.scrollWidth - window.innerWidth;
+
+        const getScrollAmount = () => servicesTrack.scrollWidth - window.innerWidth;
 
         gsap.to(servicesTrack, {
-            x: () => -totalScroll,
+            x: () => -getScrollAmount(),
             ease: 'none',
             scrollTrigger: {
-                trigger: '.services-track-wrapper',
-                start: 'top 20%',
-                end: () => '+=' + totalScroll,
-                scrub: 1,
+                trigger: '.services',
+                start: 'top top',
+                end: () => '+=' + getScrollAmount(),
+                scrub: 0.5,
                 pin: true,
-                anticipatePin: 1,
+                pinSpacing: true,
                 invalidateOnRefresh: true,
             }
         });
