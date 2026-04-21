@@ -1121,7 +1121,7 @@ input, textarea, select {
 
 .services-track-wrapper {
     overflow: visible;
-    padding: 2rem 0 6rem;
+    padding: 0 0 6rem;
 }
 
 .services-track {
@@ -1133,7 +1133,7 @@ input, textarea, select {
 
 .service-card {
     flex: 0 0 420px;
-    height: 520px;
+    height: 500px;
     position: relative;
     border-radius: var(--radius);
     overflow: hidden;
