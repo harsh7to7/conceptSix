@@ -1768,18 +1768,32 @@ input, textarea, select {
 }
 
 .marquee-item {
-    font-family: var(--font-display);
-    font-size: clamp(1.2rem, 2vw, 1.6rem);
-    font-weight: 700;
-    color: #4a4a4a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
     white-space: nowrap;
-    letter-spacing: 0.08em;
-    opacity: 0.5;
+    opacity: 0.45;
+    flex-shrink: 0;
     transition: opacity 0.3s;
 }
 
 .marquee-item:hover {
-    opacity: 1;
+    opacity: 0.8;
+}
+
+.marquee-item img {
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.marquee-item svg {
+    height: 32px;
+    width: auto;
+    display: block;
+    fill: #4a4a4a;
 }
 
 @keyframes marqueeScroll {
