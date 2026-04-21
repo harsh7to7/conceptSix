@@ -418,7 +418,11 @@
     if (servicesTrack) {
         const cards = servicesTrack.querySelectorAll('.service-card');
 
-        const getScrollAmount = () => servicesTrack.scrollWidth - window.innerWidth;
+        const getScrollAmount = () => {
+            const trackWidth = servicesTrack.scrollWidth;
+            const viewWidth = window.innerWidth;
+            return trackWidth - viewWidth + 48; // extra buffer for padding
+        };
 
         gsap.to(servicesTrack, {
             x: () => -getScrollAmount(),
@@ -426,8 +430,8 @@
             scrollTrigger: {
                 trigger: '.services',
                 start: 'top top',
-                end: () => '+=' + getScrollAmount(),
-                scrub: 0.5,
+                end: () => '+=' + (getScrollAmount() * 1.5),
+                scrub: 0.8,
                 pin: true,
                 pinSpacing: true,
                 invalidateOnRefresh: true,
