@@ -417,22 +417,21 @@
     const servicesTrack = document.getElementById('servicesTrack');
     if (servicesTrack) {
         const cards = servicesTrack.querySelectorAll('.service-card');
+        const trackWrapper = document.querySelector('.services-track-wrapper');
 
         const getScrollAmount = () => {
-            const trackWidth = servicesTrack.scrollWidth;
-            const viewWidth = window.innerWidth;
-            return trackWidth - viewWidth + 48; // extra buffer for padding
+            return servicesTrack.scrollWidth - trackWrapper.offsetWidth;
         };
 
         gsap.to(servicesTrack, {
             x: () => -getScrollAmount(),
             ease: 'none',
             scrollTrigger: {
-                trigger: '.services',
-                start: 'top top',
-                end: () => '+=' + (getScrollAmount() * 1.5),
-                scrub: 0.8,
-                pin: true,
+                trigger: trackWrapper,
+                start: 'top 15%',
+                end: () => '+=' + (getScrollAmount() * 1.2),
+                scrub: 0.6,
+                pin: trackWrapper,
                 pinSpacing: true,
                 invalidateOnRefresh: true,
             }

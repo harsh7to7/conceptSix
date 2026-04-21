@@ -1103,7 +1103,6 @@ input, textarea, select {
 /* ---- SERVICES ---- */
 .services {
     padding-bottom: 0;
-    overflow: hidden;
 }
 
 .services .container {
@@ -1120,8 +1119,8 @@ input, textarea, select {
 }
 
 .services-track-wrapper {
-    overflow: visible;
-    padding: 0 0 6rem;
+    overflow: hidden;
+    padding: 0 0 80px;
 }
 
 .services-track {
