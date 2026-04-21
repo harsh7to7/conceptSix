@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONCEPTSIX — Creative Agency Dubai</title>
+    <meta name="description" content="ConceptSix is a full-service creative agency in Dubai offering web development, brand strategy, content production, and professional photography.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Zacbelx';
+            src: url('https://conceptsix.ae/wp-content/uploads/2025/06/zacbelx-medium.ttf') format('truetype');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+    </style>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Grain Overlay -->
+    <div class="grain-overlay"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-ring"></div>
+    </div>
+
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <!-- Curtain panels -->
+        <div class="preloader-curtain preloader-curtain-left"></div>
+        <div class="preloader-curtain preloader-curtain-right"></div>
+
+        <!-- Center content -->
+        <div class="preloader-center">
+            <div class="preloader-logo-wrap">
+                <svg class="preloader-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310.9 511.8">
+                    <path class="preloader-path" d="M240.6,51.1l42.9,44.3-103.5,102c.3.6.8.5,1.4.6,4.5,1.1,9.5,1.7,14,2.8,56.5,14.7,102.7,61.6,115.4,118.3-.3.4-.8.4-1.2.4-4.7.5-9.8-.4-14.5-.4-13-.2-25.9,0-38.8-.4-2.5,0-8.6.5-10.5,0s-.7-.4-.8-.7c-1.7-3.6-3.2-7.4-5.2-10.9-24.8-43.4-79.3-56.8-126.4-38s-19.4,10.2-28.2,18.5-18.6,23.7-21.1,37.3c-5.5,30.3-1.2,59.7,17.2,84.9,37.1,50.8,115.1,52.7,152.8,1.6,4.5-6.1,8.3-12.7,11.3-19.7,7.8.1,15.6,0,23.5,0,1,0,2,.4,3.1.4,11.8.1,25.8-1,37.3,0s1.7.2,1.8.7c-3,13.3-8.1,26.4-14.6,38.3-39.5,72.7-130,101.3-205.2,65.1C5.8,455.1-27.3,347.3,25.2,266.1L91.4,83.3l58,21.4-18,50.8c0,.5-.3,1.6.6,1.3l107.8-106.1.8.4Z" fill="none" stroke="#FFD100" stroke-width="2"/>
+                    <g>
+                        <path class="preloader-path" d="M154.9,91.8l-58.4-21.8-.3-.7,5.2-14,57.8,21c.6.4.4,1.2.3,1.9-.9,4.3-4.2,9-4.6,13.6Z" fill="none" stroke="#FFD100" stroke-width="2"/>
+                        <path class="preloader-path" d="M150.4,41.7c.1,0,.9,1.2,2.1.8l16.9,6.3.3,1.4-4.8,13.2-58.6-22.2,5.1-13.9h.6c12.4,4.4,24.6,9.3,37,14s1,0,1.5.3Z" fill="none" stroke="#FFD100" stroke-width="2"/>
+                        <path class="preloader-path" d="M179.6,21.2c.9.9-4.3,12-4.3,14.1h-1.3s-57.4-21.1-57.4-21.1L121.2,0h.9c0,0,57.4,21.2,57.4,21.2Z" fill="none" stroke="#FFD100" stroke-width="2"/>
+                    </g>
+                </svg>
+                <!-- Glow ring behind logo -->
+                <div class="preloader-glow"></div>
+            </div>
+
+            <div class="preloader-text">
+                <span class="preloader-word">CONCEPT</span><span class="preloader-word accent">SIX</span>
+            </div>
+
+            <div class="preloader-counter">
+                <div class="preloader-bar">
+                    <div class="preloader-progress" id="preloaderProgress"></div>
+                </div>
+                <div class="preloader-count" id="preloaderCount">0</div>
+            </div>
+
+            <div class="preloader-tagline">Loading Experience</div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <a href="#" class="nav-logo"><img src="https://conceptsix.ae/wp-content/uploads/2025/06/cs-yello-512.svg" alt="ConceptSix" class="nav-logo-img"></a>
+        <div class="nav-links" id="navLinks">
+            <a href="#about" class="nav-link" data-nav>About</a>
+            <a href="#services" class="nav-link" data-nav>Services</a>
+            <a href="#work" class="nav-link" data-nav>Work</a>
+            <a href="#contact" class="nav-link" data-nav>Contact</a>
+        </div>
+        <a href="#contact" class="nav-cta" data-magnetic>Let's Talk</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-inner">
+            <a href="#about" class="mobile-link">About</a>
+            <a href="#services" class="mobile-link">Services</a>
+            <a href="#work" class="mobile-link">Work</a>
+            <a href="#contact" class="mobile-link">Contact</a>
+            <a href="#contact" class="mobile-link mobile-cta">Let's Talk →</a>
+        </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="hero">
+        <div class="hero-video-wrap">
+            <video class="hero-video" autoplay muted loop playsinline>
+                <source src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_7ebf3650b7a9484cb57c45c7d7089f55.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+
+        <!-- Floating side label -->
+        <div class="hero-side-label">Dubai — Creative Agency</div>
+
+        <!-- Large C6 watermark -->
+        <div class="hero-watermark">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310.9 511.8"><path d="M240.6,51.1l42.9,44.3-103.5,102c.3.6.8.5,1.4.6,4.5,1.1,9.5,1.7,14,2.8,56.5,14.7,102.7,61.6,115.4,118.3-.3.4-.8.4-1.2.4-4.7.5-9.8-.4-14.5-.4-13-.2-25.9,0-38.8-.4-2.5,0-8.6.5-10.5,0s-.7-.4-.8-.7c-1.7-3.6-3.2-7.4-5.2-10.9-24.8-43.4-79.3-56.8-126.4-38s-19.4,10.2-28.2,18.5-18.6,23.7-21.1,37.3c-5.5,30.3-1.2,59.7,17.2,84.9,37.1,50.8,115.1,52.7,152.8,1.6,4.5-6.1,8.3-12.7,11.3-19.7,7.8.1,15.6,0,23.5,0,1,0,2,.4,3.1.4,11.8.1,25.8-1,37.3,0s1.7.2,1.8.7c-3,13.3-8.1,26.4-14.6,38.3-39.5,72.7-130,101.3-205.2,65.1C5.8,455.1-27.3,347.3,25.2,266.1L91.4,83.3l58,21.4-18,50.8c0,.5-.3,1.6.6,1.3l107.8-106.1.8.4Z" fill="currentColor"/><g><path d="M154.9,91.8l-58.4-21.8-.3-.7,5.2-14,57.8,21c.6.4.4,1.2.3,1.9-.9,4.3-4.2,9-4.6,13.6Z" fill="currentColor"/><path d="M150.4,41.7c.1,0,.9,1.2,2.1.8l16.9,6.3.3,1.4-4.8,13.2-58.6-22.2,5.1-13.9h.6c12.4,4.4,24.6,9.3,37,14s1,0,1.5.3Z" fill="currentColor"/><path d="M179.6,21.2c.9.9-4.3,12-4.3,14.1h-1.3s-57.4-21.1-57.4-21.1L121.2,0h.9c0,0,57.4,21.2,57.4,21.2Z" fill="currentColor"/></g></svg>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-tag">
+                <span class="hero-tag-line"></span>
+                <span class="hero-tag-text">Strategy &middot; Design &middot; Production</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="hero-line"><span class="hero-line-inner">We Build Brands</span></span>
+                <span class="hero-line"><span class="hero-line-inner">That <em>Dominate</em></span></span>
+                <span class="hero-line accent"><span class="hero-line-inner">Digital.</span></span>
+            </h1>
+            <p class="hero-sub">Full-service creative agency crafting digital experiences, cinematic content, and brand identities from Dubai to the world.</p>
+            <div class="hero-ctas">
+                <a href="#work" class="btn btn-primary" data-magnetic>
+                    <span>View Our Work</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                </a>
+                <a href="#contact" class="btn btn-outline" data-magnetic>
+                    <span>Start a Project</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Bottom bar with scroll + stats -->
+        <div class="hero-bottom">
+            <div class="hero-scroll">
+                <div class="hero-scroll-line"></div>
+                <span>Scroll to explore</span>
+            </div>
+            <div class="hero-stats-row">
+                <div class="hero-stat"><span class="hero-stat-num">150+</span> Clients</div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat"><span class="hero-stat-num">6+</span> Years</div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat"><span class="hero-stat-num">300+</span> Projects</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-left">
+                    <span class="section-tag" data-reveal>01 — About</span>
+                    <h2 class="about-title" data-reveal-lines>
+                        Born in Dubai.<br>Built for Brands.
+                    </h2>
+                    <p class="about-text" data-reveal>
+                        We are a full-service creative agency rooted in Dubai's vibrant energy.
+                        We blend cinematic storytelling with cutting-edge digital strategy to build
+                        brands that don't just exist online — they dominate. From pixel-perfect websites
+                        to magazine-worthy photoshoots, every project is crafted with obsessive attention
+                        to detail and a relentless pursuit of excellence.
+                    </p>
+                    <p class="about-text" data-reveal>
+                        Our team of strategists, designers, developers, and producers work as one
+                        to deliver experiences that captivate audiences and drive measurable growth.
+                    </p>
+                </div>
+                <div class="about-right">
+                    <div class="stat-card" data-reveal>
+                        <span class="stat-number" data-count="150">0</span>
+                        <span class="stat-plus">+</span>
+                        <span class="stat-label">Clients Worldwide</span>
+                    </div>
+                    <div class="stat-card" data-reveal>
+                        <span class="stat-number" data-count="300">0</span>
+                        <span class="stat-plus">+</span>
+                        <span class="stat-label">Projects Delivered</span>
+                    </div>
+                    <div class="stat-card" data-reveal>
+                        <span class="stat-number" data-count="6">0</span>
+                        <span class="stat-plus">+</span>
+                        <span class="stat-label">Years of Excellence</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services section" id="services">
+        <div class="container">
+            <span class="section-tag" data-reveal>02 — Services</span>
+            <h2 class="services-title" data-reveal-lines>What We Do</h2>
+        </div>
+        <div class="services-track-wrapper">
+            <div class="services-track" id="servicesTrack">
+                <div class="service-card">
+                    <div class="service-card-video">
+                        <video muted loop playsinline>
+                            <source src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_01ec155335de4dd9ae2b5298ee93e149.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="service-card-content">
+                        <span class="service-card-num">01</span>
+                        <h3 class="service-card-title">Web Development</h3>
+                        <p class="service-card-desc">High-performance websites and web apps built with cutting-edge technology. From e-commerce to custom platforms.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-video">
+                        <video muted loop playsinline>
+                            <source src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_1b0bbf4b0c5842178cee90f04976ee6a.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="service-card-content">
+                        <span class="service-card-num">02</span>
+                        <h3 class="service-card-title">Brand Strategy</h3>
+                        <p class="service-card-desc">Strategic brand positioning that resonates with your audience and sets you apart in competitive markets.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-video">
+                        <video muted loop playsinline>
+                            <source src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_d3bd3bac82c04b7691233d6f83fd4b0c.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="service-card-content">
+                        <span class="service-card-num">03</span>
+                        <h3 class="service-card-title">Content Production</h3>
+                        <p class="service-card-desc">Cinematic video production and motion design that tells your brand story with impact and emotion.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-video">
+                        <video muted loop playsinline>
+                            <source src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_801c0dfaed5e464f8000742e0812b9e5.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="service-card-content">
+                        <span class="service-card-num">04</span>
+                        <h3 class="service-card-title">Photography</h3>
+                        <p class="service-card-desc">Professional photoshoots for products, campaigns, and editorial — every frame crafted to perfection.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-video">
+                        <video muted loop playsinline>
+                            <source src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_7ebf3650b7a9484cb57c45c7d7089f55.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="service-card-content">
+                        <span class="service-card-num">05</span>
+                        <h3 class="service-card-title">Social Media</h3>
+                        <p class="service-card-desc">Data-driven social strategies that build communities, drive engagement, and convert followers into customers.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-video">
+                        <video muted loop playsinline>
+                            <source src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_01ec155335de4dd9ae2b5298ee93e149.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="service-card-content">
+                        <span class="service-card-num">06</span>
+                        <h3 class="service-card-title">Digital Marketing</h3>
+                        <p class="service-card-desc">ROI-focused campaigns across search, social, and programmatic channels that deliver measurable growth.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUTIONS GRID -->
+    <section class="solutions section" id="solutions">
+        <div class="container">
+            <div class="solutions-header">
+                <div class="solutions-header-left">
+                    <span class="section-tag" data-reveal>03 — Our Solutions</span>
+                    <h2 class="solutions-title" data-reveal-lines>Smart Solutions Designed<br>for Your Brand</h2>
+                    <p class="solutions-desc" data-reveal>We turn ideas into impact through tailored digital strategies that drive growth, visibility, and engagement.</p>
+                </div>
+                <div class="solutions-tabs" data-reveal>
+                <button class="solutions-tab active" data-tab="digital">Digital Marketing</button>
+                <button class="solutions-tab" data-tab="social">Social Media</button>
+                <button class="solutions-tab" data-tab="web">Web Development</button>
+                </div>
+            </div>
+
+            <!-- Digital Marketing -->
+            <div class="solutions-grid solutions-panel active" id="panel-digital">
+                <a href="#contact" class="solution-card" data-reveal>
+                    <div class="solution-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    </div>
+                    <h3 class="solution-name">Search Engine Optimization</h3>
+                    <p class="solution-desc">SEO strategies that improve visibility, drive traffic, and increase qualified leads.</p>
+                    <span class="solution-arrow">→</span>
+                </a>
+                <a href="#contact" class="solution-card" data-reveal>
+                    <div class="solution-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </div>
+                    <h3 class="solution-name">Google Ads</h3>
+                    <p class="solution-desc">Targeted ad campaigns that maximize reach, boost clicks, and grow conversions.</p>
+                    <span class="solution-arrow">→</span>
+                </a>
+                <a href="#contact" class="solution-card" data-reveal>
+                    <div class="solution-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3 class="solution-name">Reputation Management</h3>
+                    <p class="solution-desc">Strategies that protect your image, build trust, and enhance online credibility.</p>
+                    <span class="solution-arrow">→</span>
+                </a>
+                <a href="#contact" class="solution-card" data-reveal>
+                    <div class="solution-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                    </div>
+                    <h3 class="solution-name">Content Marketing</h3>
+                    <p class="solution-desc">Creative content that attracts audiences, builds loyalty, and drives engagement.</p>
+                    <span class="solution-arrow">→</span>
+                </a>
+                <a href="#contact" class="solution-card" data-reveal>
+                    <div class="solution-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+                    </div>
+                    <h3 class="solution-name">SEO Backlinks</h3>
+                    <p class="solution-desc">Authority links that strengthen ranking, credibility, and long-term organic growth.</p>
+                    <span class="solution-arrow">→</span>
+                </a>
+                <a href="#contact" class="solution-card" data-reveal>
+                    <div class="solution-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/></svg>
+                    </div>
+                    <h3 class="solution-name">Performance Marketing</h3>
+                    <p class="solution-desc">Data-driven campaigns focused on ROI, conversions, and scalable business growth.</p>
+                    <span class="solution-arrow">→</span>
+                </a>
+            </div>
+
+            <!-- Social Media -->
+            <div class="solutions-grid solutions-panel" id="panel-social">
+                <a href="#contact" class="solution-card">
+                    <div class="solution-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></div>
+                    <h3 class="solution-name">Facebook Marketing</h3>
+                    <p class="solution-desc">Strategies that boost engagement, grow communities, and drive measurable results.</p>
+                    <span class="solution-arrow">→</span>
+                </a>
+                <a href="#contact" class="solution-card">
+                    <div class="solution-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div>
+                    <h3 class="solution-name">Instagram Marketing</h3>
+                    <p class="solution-desc">Creative strategies that attract followers and convert engagement into growth.</p>
+                    <span class="solution-arrow">→</span>
+                </a>
+                <a href="#contact" class="solution-card">
+                    <div class="solution-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div>
+                    <h3 class="solution-name">LinkedIn Marketing</h3>
+                    <p class="solution-desc">Build authority, generate leads, and strengthen professional connections.</p>
+                    <span class="solution-arrow">→</span>
+                </a>
+                <a href="#contact" class="solution-card">
+                    <div class="solution-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div>
+                    <h3 class="solution-name">TikTok Marketing</h3>
+                    <p class="solution-desc">Viral content strategies that engage audiences and elevate brand awareness.</p>
+                    <span class="solution-arrow">→</span>
+                </a>
+                <a href="#contact" class="solution-card">
+                    <div class="solution-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
+                    <h3 class="solution-name">Pinterest Marketing</h3>
+                    <p class="solution-desc">Showcase creativity, inspire action, and drive targeted traffic to your brand.</p>
+                    <span class="solution-arrow">→</span>
+                </a>
+            </div>
+
+            <!-- Web Development -->
+            <div class="solutions-grid solutions-panel" id="panel-web">
+                <a href="#contact" class="solution-card">
+                    <div class="solution-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+                    <h3 class="solution-name">WordPress Development</h3>
+                    <p class="solution-desc">Custom, high-performance WordPress websites designed for scalability and results.</p>
+                    <span class="solution-arrow">→</span>
+                </a>
+                <a href="#contact" class="solution-card">
+                    <div class="solution-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></div>
+                    <h3 class="solution-name">PHP Development</h3>
+                    <p class="solution-desc">Powerful PHP solutions ensuring flexibility, speed, and secure performance.</p>
+                    <span class="solution-arrow">→</span>
+                </a>
+                <a href="#contact" class="solution-card">
+                    <div class="solution-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
+                    <h3 class="solution-name">CMS Development</h3>
+                    <p class="solution-desc">Intuitive content management systems that simplify updates and improve workflow.</p>
+                    <span class="solution-arrow">→</span>
+                </a>
+                <a href="#contact" class="solution-card">
+                    <div class="solution-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12,2 2,7 12,12 22,7"/><polyline points="2,17 12,22 22,17"/><polyline points="2,12 12,17 22,12"/></svg></div>
+                    <h3 class="solution-name">Laravel Development</h3>
+                    <p class="solution-desc">Robust Laravel applications with clean architecture, scalability, and security.</p>
+                    <span class="solution-arrow">→</span>
+                </a>
+                <a href="#contact" class="solution-card">
+                    <div class="solution-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
+                    <h3 class="solution-name">Website Maintenance</h3>
+                    <p class="solution-desc">Proactive monitoring, optimization, and ongoing technical support for your site.</p>
+                    <span class="solution-arrow">→</span>
+                </a>
+                <a href="#contact" class="solution-card">
+                    <div class="solution-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg></div>
+                    <h3 class="solution-name">E-Commerce Development</h3>
+                    <p class="solution-desc">Online stores that convert visitors into customers through smart UX and performance.</p>
+                    <span class="solution-arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SHOWREEL SECTION -->
+    <section class="showreel section" id="showreel">
+        <div class="showreel-video-wrap">
+            <video class="showreel-video" muted loop playsinline id="showreelVideo">
+                <source src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_d3bd3bac82c04b7691233d6f83fd4b0c.mp4" type="video/mp4">
+            </video>
+            <div class="showreel-overlay"></div>
+        </div>
+        <div class="showreel-content">
+            <span class="showreel-tag" data-reveal>Our Showreel</span>
+            <button class="showreel-play" id="showreelPlay" data-magnetic aria-label="Play showreel">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+                <span class="showreel-play-ring"></span>
+                <span class="showreel-play-text">Play Reel</span>
+            </button>
+        </div>
+        <!-- Fullscreen Player -->
+        <div class="showreel-fullscreen" id="showreelFullscreen">
+            <button class="showreel-close" id="showreelClose" aria-label="Close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+            <video class="showreel-full-video" id="showreelFullVideo" controls>
+                <source src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_d3bd3bac82c04b7691233d6f83fd4b0c.mp4" type="video/mp4">
+            </video>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO / WORK SECTION -->
+    <section class="work section" id="work">
+        <div class="container">
+            <div class="work-header">
+                <span class="section-tag" data-reveal>04 — Selected Work</span>
+                <h2 class="work-title" data-reveal-lines>Featured Projects</h2>
+            </div>
+            <div class="work-grid">
+                <div class="work-item work-item-lg">
+                    <a href="#" class="work-item-inner">
+                        <div class="work-item-media">
+                            <img src="https://conceptsix.ae/wp-content/uploads/2025/10/freepik__a-sleek-digital-marketing-concept-modern-workspace__54560.webp" alt="House of Heritage" loading="lazy">
+                            <video muted loop playsinline preload="none">
+                                <source src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_207cee48bc6541caa15a0e30786407da.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="work-item-info">
+                            <span class="work-item-num">01</span>
+                            <h3 class="work-item-name">House of Heritage</h3>
+                            <span class="work-item-cat">Branding & Identity</span>
+                        </div>
+                        <div class="work-item-arrow">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                        </div>
+                    </a>
+                </div>
+                <div class="work-item work-item-sm">
+                    <a href="#" class="work-item-inner">
+                        <div class="work-item-media">
+                            <img src="https://conceptsix.ae/wp-content/uploads/2025/10/modern-equipped-computer-lab-scaled.webp" alt="Desert Luxe" loading="lazy">
+                            <video muted loop playsinline preload="none">
+                                <source src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_7f58416b488a4c779fd698d5a2c591d6.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="work-item-info">
+                            <span class="work-item-num">02</span>
+                            <h3 class="work-item-name">Desert Luxe</h3>
+                            <span class="work-item-cat">Photography</span>
+                        </div>
+                        <div class="work-item-arrow">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                        </div>
+                    </a>
+                </div>
+                <div class="work-item work-item-sm">
+                    <a href="#" class="work-item-inner">
+                        <div class="work-item-media">
+                            <img src="https://conceptsix.ae/wp-content/uploads/2025/10/freepik__assistant__12573-1.webp" alt="Skyline Digital" loading="lazy">
+                            <video muted loop playsinline preload="none">
+                                <source src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_1b0bbf4b0c5842178cee90f04976ee6a.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="work-item-info">
+                            <span class="work-item-num">03</span>
+                            <h3 class="work-item-name">Skyline Digital</h3>
+                            <span class="work-item-cat">Web Development</span>
+                        </div>
+                        <div class="work-item-arrow">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS SECTION -->
+    <section class="process section" id="process">
+        <div class="container">
+            <div class="process-header">
+                <span class="section-tag" data-reveal>05 — Process</span>
+                <h2 class="process-title" data-reveal-lines>6 Pillars of Success</h2>
+            </div>
+            <div class="process-grid">
+                <div class="process-step" data-reveal>
+                    <div class="process-step-num">01</div>
+                    <div class="process-step-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    </div>
+                    <h3 class="process-step-title">Discover</h3>
+                    <p class="process-step-desc">Deep research into your brand, audience, and competitive landscape to uncover opportunities.</p>
+                </div>
+                <div class="process-step" data-reveal>
+                    <div class="process-step-num">02</div>
+                    <div class="process-step-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+                    </div>
+                    <h3 class="process-step-title">Strategize</h3>
+                    <p class="process-step-desc">Craft a comprehensive roadmap aligned with your goals, budget, and timeline.</p>
+                </div>
+                <div class="process-step" data-reveal>
+                    <div class="process-step-num">03</div>
+                    <div class="process-step-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+                    </div>
+                    <h3 class="process-step-title">Create</h3>
+                    <p class="process-step-desc">Design and develop stunning assets — from websites to cinematic content and beyond.</p>
+                </div>
+                <div class="process-step" data-reveal>
+                    <div class="process-step-num">04</div>
+                    <div class="process-step-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 2L11 13"/><polygon points="22,2 15,22 11,13 2,9"/></svg>
+                    </div>
+                    <h3 class="process-step-title">Launch</h3>
+                    <p class="process-step-desc">Deploy with precision across all channels, ensuring flawless execution on day one.</p>
+                </div>
+                <div class="process-step" data-reveal>
+                    <div class="process-step-num">05</div>
+                    <div class="process-step-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                    </div>
+                    <h3 class="process-step-title">Measure</h3>
+                    <p class="process-step-desc">Track performance with advanced analytics to understand what's working and why.</p>
+                </div>
+                <div class="process-step" data-reveal>
+                    <div class="process-step-num">06</div>
+                    <div class="process-step-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="23,6 13.5,15.5 8.5,10.5 1,18"/><polyline points="17,6 23,6 23,12"/></svg>
+                    </div>
+                    <h3 class="process-step-title">Scale</h3>
+                    <p class="process-step-desc">Optimize, iterate, and amplify. Turn initial success into sustained, scalable growth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials section" id="testimonials">
+        <div class="container">
+            <span class="section-tag" data-reveal>06 — Testimonials</span>
+            <h2 class="testimonials-title" data-reveal-lines>What They Say</h2>
+            <div class="testimonial-carousel" id="testimonialCarousel">
+                <div class="testimonial-slide active">
+                    <blockquote class="testimonial-quote">"ConceptSix transformed our entire digital presence. The website they built isn't just beautiful — it's a revenue machine. Our conversions increased 340% in the first quarter."</blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">AK</div>
+                        <div>
+                            <div class="testimonial-name">Ahmed Al Kaabi</div>
+                            <div class="testimonial-role">CEO, Heritage Group — Dubai, UAE</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <blockquote class="testimonial-quote">"Working with their team felt like having an in-house creative department. The photoshoot quality rivaled international agencies at a fraction of the cost. Absolutely world-class."</blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">SR</div>
+                        <div>
+                            <div class="testimonial-name">Sarah Reynolds</div>
+                            <div class="testimonial-role">Marketing Director, Luxe Interiors — Abu Dhabi, UAE</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <blockquote class="testimonial-quote">"They don't just deliver projects — they deliver results. Our social media engagement grew 5x and our brand is now recognized across the GCC. ConceptSix is the real deal."</blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">MH</div>
+                        <div>
+                            <div class="testimonial-name">Mohammed Hassan</div>
+                            <div class="testimonial-role">Founder, Skyline Ventures — Dubai, UAE</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-nav">
+                <button class="testimonial-btn" id="testimonialPrev" aria-label="Previous testimonial">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+                </button>
+                <div class="testimonial-dots" id="testimonialDots">
+                    <button class="testimonial-dot active" aria-label="Go to testimonial 1"></button>
+                    <button class="testimonial-dot" aria-label="Go to testimonial 2"></button>
+                    <button class="testimonial-dot" aria-label="Go to testimonial 3"></button>
+                </div>
+                <button class="testimonial-btn" id="testimonialNext" aria-label="Next testimonial">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- PARTNERS SECTION -->
+    <section class="partners section" id="partners">
+        <div class="container">
+            <span class="section-tag center" data-reveal>Trusted By</span>
+        </div>
+        <div class="marquee">
+            <div class="marquee-track">
+                <div class="marquee-item">Google</div>
+                <div class="marquee-item">Meta</div>
+                <div class="marquee-item">HubSpot</div>
+                <div class="marquee-item">TikTok</div>
+                <div class="marquee-item">Shopify</div>
+                <div class="marquee-item">WordPress</div>
+                <div class="marquee-item">Google</div>
+                <div class="marquee-item">Meta</div>
+                <div class="marquee-item">HubSpot</div>
+                <div class="marquee-item">TikTok</div>
+                <div class="marquee-item">Shopify</div>
+                <div class="marquee-item">WordPress</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact section" id="contact">
+        <div class="contact-bg">
+            <img src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/art-board.webp" alt="" loading="lazy">
+        </div>
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-left">
+                    <span class="section-tag" data-reveal>07 — Contact</span>
+                    <h2 class="contact-title" data-reveal-lines>Got a Project<br>in Mind?</h2>
+                    <p class="contact-text" data-reveal>Let's create something extraordinary together. Whether you need a stunning website, a brand overhaul, or a cinematic photoshoot — we're ready.</p>
+                    <div class="contact-info" data-reveal>
+                        <a href="mailto:hello@conceptsix.ae" class="contact-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            hello@conceptsix.ae
+                        </a>
+                        <a href="tel:+971000000000" class="contact-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                            +971 XX XXX XXXX
+                        </a>
+                        <a href="https://wa.me/971000000000" target="_blank" rel="noopener" class="contact-whatsapp" data-magnetic>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            Chat on WhatsApp
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-right" data-reveal>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" name="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder="Your Email" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="tel" name="phone" placeholder="Phone Number">
+                            </div>
+                            <div class="form-group">
+                                <select name="service" required>
+                                    <option value="" disabled selected>Select Service</option>
+                                    <option value="web">Web Development</option>
+                                    <option value="branding">Brand Strategy</option>
+                                    <option value="content">Content Production</option>
+                                    <option value="photography">Photography</option>
+                                    <option value="social">Social Media</option>
+                                    <option value="marketing">Digital Marketing</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Tell us about your project..." rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full" data-magnetic>
+                            <span>Send Message</span>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><polygon points="22,2 15,22 11,13 2,9"/></svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#" class="footer-logo"><img src="https://conceptsix.ae/wp-content/uploads/2025/06/cs-yello-512.svg" alt="ConceptSix" class="footer-logo-img"></a>
+                    <p class="footer-desc">Full-service creative agency crafting digital experiences from Dubai to the world.</p>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Navigate</h4>
+                    <a href="#about" class="footer-link">About</a>
+                    <a href="#services" class="footer-link">Services</a>
+                    <a href="#work" class="footer-link">Work</a>
+                    <a href="#contact" class="footer-link">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Services</h4>
+                    <a href="#services" class="footer-link">Web Development</a>
+                    <a href="#services" class="footer-link">Brand Strategy</a>
+                    <a href="#services" class="footer-link">Photography</a>
+                    <a href="#services" class="footer-link">Content Production</a>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Connect</h4>
+                    <a href="https://instagram.com" target="_blank" rel="noopener" class="footer-link">Instagram</a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
+                    <a href="https://x.com" target="_blank" rel="noopener" class="footer-link">X / Twitter</a>
+                    <a href="https://behance.net" target="_blank" rel="noopener" class="footer-link">Behance</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2025 ConceptSix. All rights reserved.</span>
+                <span>Dubai, United Arab Emirates</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot Widget -->
+    <div class="chatbot-widget" id="chatbotWidget">
+        <button class="chatbot-toggle" id="chatbotToggle" aria-label="Open chat">
+            <svg class="chatbot-icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            <svg class="chatbot-icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+        <div class="chatbot-window" id="chatbotWindow">
+            <iframe src="https://meeting-chat-bot.vercel.app/" title="Chat with us" allow="microphone"></iframe>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
