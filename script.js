@@ -235,72 +235,45 @@
     function initHeroAnimation() {
         const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
-        tl.to('.hero-line-inner', {
-            y: 0,
-            duration: 1.2,
-            stagger: 0.12,
-        })
-        .to('.hero-tag', {
+        // Badge pill fade in
+        tl.to('.hero-badge-pill', {
             opacity: 1,
             y: 0,
             duration: 0.8,
-        }, '-=0.6')
+        })
+        // Title lines reveal
+        .to('.hero-line-inner', {
+            y: 0,
+            duration: 1.2,
+            stagger: 0.12,
+            ease: 'power4.out',
+        }, '-=0.3')
+        // Subtitle
         .to('.hero-sub', {
             opacity: 1,
             y: 0,
             duration: 0.8,
-        }, '-=0.4')
-        .to('.hero-ctas', {
+        }, '-=0.5')
+        // Showcase carousel
+        .to('.hero-showcase', {
             opacity: 1,
             y: 0,
-            duration: 0.8,
+            duration: 1,
+            ease: 'power2.out',
         }, '-=0.4')
-        .to('.hero-bottom', {
-            opacity: 1,
-            duration: 0.8,
-        }, '-=0.3')
-        .to('.hero-side-label', {
-            opacity: 1,
-            duration: 0.8,
-        }, '-=0.5')
+        // Nav
         .to(nav, {
             opacity: 1,
             y: 0,
             duration: 0.6,
-        }, '-=0.6');
-
-        // Hero video parallax
-        gsap.to('.hero-video', {
-            yPercent: 20,
-            ease: 'none',
-            scrollTrigger: {
-                trigger: '.hero',
-                start: 'top top',
-                end: 'bottom top',
-                scrub: true,
-            }
-        });
-
-        // Watermark subtle float
-        gsap.to('.hero-watermark', {
-            yPercent: -8,
-            ease: 'none',
-            scrollTrigger: {
-                trigger: '.hero',
-                start: 'top top',
-                end: 'bottom top',
-                scrub: true,
-            }
-        });
+        }, '-=0.8');
     }
 
     // Initial states for hero
     gsap.set(nav, { opacity: 0, y: -20 });
-    gsap.set('.hero-tag', { opacity: 0, y: 20 });
+    gsap.set('.hero-badge-pill', { opacity: 0, y: 15 });
     gsap.set('.hero-sub', { opacity: 0, y: 15 });
-    gsap.set('.hero-ctas', { opacity: 0, y: 20 });
-    gsap.set('.hero-bottom', { opacity: 0 });
-    gsap.set('.hero-side-label', { opacity: 0 });
+    gsap.set('.hero-showcase', { opacity: 0, y: 30 });
 
     // ---- VIDEO PLAYBACK ON SCROLL ----
     function startVideoPlayback() {
@@ -669,6 +642,20 @@
         resizeTimer = setTimeout(() => {
             ScrollTrigger.refresh();
         }, 250);
+    });
+
+    // ---- THEME TOGGLE ----
+    const themeToggle = document.getElementById('themeToggle');
+    const savedTheme = localStorage.getItem('c6-theme');
+    if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    }
+
+    themeToggle.addEventListener('click', () => {
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('c6-theme', next);
     });
 
 })();
