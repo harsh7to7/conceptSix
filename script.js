@@ -18,7 +18,7 @@
     let loadComplete = false;
 
     // Phase 1: Intro animation (logo draw + text reveal)
-    const introTl = gsap.timeline({ delay: 0.3 });
+    const introTl = gsap.timeline({ delay: 0.1 });
 
     // Animate stroke draw on logo paths
     preloaderPaths.forEach(path => {
@@ -30,30 +30,27 @@
     introTl
         .to(preloaderPaths, {
             strokeDashoffset: 0,
-            duration: 1.8,
-            stagger: 0.15,
+            duration: 0.8,
+            stagger: 0.08,
             ease: 'power2.inOut',
         })
-        // Fill in the logo after stroke draw
         .to(preloaderPaths, {
             fill: '#FFD100',
             stroke: 'transparent',
-            duration: 0.6,
+            duration: 0.3,
             ease: 'power1.in',
-        }, '-=0.3')
-        // Reveal brand text
+        }, '-=0.2')
         .to('.preloader-word', {
             opacity: 1,
             y: 0,
-            duration: 0.6,
-            stagger: 0.08,
+            duration: 0.3,
+            stagger: 0.04,
             ease: 'power3.out',
-        }, '-=0.4')
-        // Show tagline
+        }, '-=0.2')
         .to('.preloader-tagline', {
             opacity: 1,
-            duration: 0.4,
-        }, '-=0.3')
+            duration: 0.2,
+        }, '-=0.1')
         .add(() => { startCounting(); });
 
     // Phase 2: Counter fills up
@@ -61,7 +58,7 @@
         const countObj = { val: 0 };
         gsap.to(countObj, {
             val: 100,
-            duration: 1.6,
+            duration: 0.6,
             ease: 'power2.inOut',
             onUpdate: () => {
                 const v = Math.round(countObj.val);
@@ -69,12 +66,12 @@
                 preloaderProgress.style.width = v + '%';
             },
             onComplete: () => {
-                setTimeout(dismissPreloader, 300);
+                dismissPreloader();
             }
         });
     }
 
-    // Phase 3: Cinematic exit — content scales up, curtains split open
+    // Phase 3: Exit
     function dismissPreloader() {
         const exitTl = gsap.timeline({
             onComplete: () => {
@@ -85,22 +82,20 @@
         });
 
         exitTl
-            // Scale up center content and fade
             .to('.preloader-center', {
-                scale: 1.15,
+                scale: 1.1,
                 opacity: 0,
-                duration: 0.6,
+                duration: 0.35,
                 ease: 'power3.in',
             })
-            // Split curtains apart
             .to('.preloader-curtain-left', {
                 xPercent: -100,
-                duration: 0.8,
+                duration: 0.5,
                 ease: 'power4.inOut',
-            }, '-=0.2')
+            }, '-=0.1')
             .to('.preloader-curtain-right', {
                 xPercent: 100,
-                duration: 0.8,
+                duration: 0.5,
                 ease: 'power4.inOut',
             }, '<');
     }
