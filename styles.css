@@ -526,13 +526,13 @@ input, textarea, select {
 
 .nav-links {
     display: flex;
-    gap: 2.5rem;
+    gap: 1.5rem;
 }
 
 .nav-link {
-    font-size: 0.85rem;
+    font-size: 0.78rem;
     font-weight: 400;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.03em;
     color: var(--text);
     transition: color 0.3s;
     position: relative;
