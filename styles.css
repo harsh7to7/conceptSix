@@ -1391,7 +1391,7 @@ input, textarea, select {
 color: #fff;
 }
 video#showreelVideo {
-    top: -20%;
+    top: -25%;
     position: relative;
     height: 160%;
 }
