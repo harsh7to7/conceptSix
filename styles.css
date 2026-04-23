@@ -1399,13 +1399,19 @@ input, textarea, select {
 }
 
 .service-card-title {
-    font-family: var(--font-display);
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: var(--white);
-    margin-bottom: 0.6rem;
+font-family: var(--font-display);
+font-size: 1.6rem;
+font-weight: 700;
+color: var(--white);
+margin-bottom: 0.6rem;
 }
-
+#services .service-card-desc,
+#services h3.service-card-title {
+color: #fff;
+}
+#services .service-card-num {
+    color: #fff;
+}
 .service-card-desc {
     font-size: 0.9rem;
     line-height: 1.6;
