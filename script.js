@@ -644,6 +644,8 @@
     const savedTheme = localStorage.getItem('c6-theme');
     if (savedTheme) {
         document.documentElement.setAttribute('data-theme', savedTheme);
+    } else {
+        document.documentElement.setAttribute('data-theme', 'light');
     }
 
     themeToggle.addEventListener('click', () => {

@@ -58,7 +58,7 @@
 }
 
 [data-theme="light"] .nav-cta {
-    color: #0d0d0d;
+    color: #ffffff;
 }
 
 [data-theme="light"] .hero-badge-pill {
@@ -128,7 +128,7 @@
 
 [data-theme="light"] .solutions-tab.active {
     background: var(--accent);
-    color: #0d0d0d;
+    color: #ffffff;
 }
 
 [data-theme="light"] .testimonial-card {
@@ -170,6 +170,36 @@
 [data-theme="light"] .footer .footer-title,
 [data-theme="light"] .footer .footer-logo-text {
     color: #f5f4f0;
+}
+
+[data-theme="light"] .btn-primary {
+    color: #ffffff;
+}
+
+[data-theme="light"] .btn-primary svg {
+    stroke: #ffffff;
+}
+
+[data-theme="light"] ::selection {
+    color: #ffffff;
+}
+
+[data-theme="light"] .chatbot-toggle {
+    color: #ffffff;
+    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.35);
+}
+
+[data-theme="light"] .chatbot-toggle:hover {
+    box-shadow: 0 6px 28px rgba(124, 58, 237, 0.45);
+}
+
+[data-theme="light"] .nav-cta:hover {
+    background: var(--accent-dark);
+    box-shadow: 0 0 30px var(--accent-glow);
+}
+
+[data-theme="light"] .btn-primary:hover {
+    background: var(--accent-dark);
 }
 
 /* ---- THEME TOGGLE BUTTON ---- */
