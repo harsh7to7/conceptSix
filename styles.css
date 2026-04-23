@@ -162,6 +162,12 @@
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
 }
 
+[data-theme="light"] .work-card-num {
+    color: #ffffff;
+    background: var(--purple);
+    border-color: var(--purple);
+}
+
 [data-theme="light"] .footer {
     background: #0d0d0d;
     color: #b0ada6;
