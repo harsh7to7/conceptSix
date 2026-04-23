@@ -1390,6 +1390,9 @@ input, textarea, select {
 .showreel-play {
 color: #fff;
 }
+.showreel-play svg {
+    fill: #fff;
+}
 video#showreelVideo {
     top: -25%;
     position: relative;
