@@ -206,7 +206,7 @@
 
     <!-- ABOUT SECTION -->
     <section class="about section" id="about">
-        <video class="about-bg-video" autoplay muted loop playsinline>
+        <video class="about-bg-video" autoplay muted loop playsinline poster="poster.jpg">
             <source src="https://dl.dropboxusercontent.com/scl/fi/f4aaw6v3wom0neomt729w/GettyImages-1139926612-1.mp4?rlkey=jmlm5exjzb8fe2vysvphm2de7&st=w1k2lzik" type="video/mp4">
         </video>
         <div class="container">
@@ -895,7 +895,7 @@
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <div class="c42-card">
-                        <img src="https://conceptsix.ae/wp-content/uploads/2025/10/freepik__a-sleek-digital-marketing-concept-modern-workspace__54560.webp" alt="Resource">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80" alt="Digital Strategy Blog">
                         <div class="c42-text">
                             <h3>Digital Strategy for 2026</h3>
                             <p>How to build a digital strategy that drives growth, visibility, and engagement in the modern landscape.</p>
@@ -910,7 +910,7 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="c42-card">
-                        <img src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/art-board.webp" alt="Resource">
+                        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&q=80" alt="Brand Identity Blog">
                         <div class="c42-text">
                             <h3>The Power of Brand Identity</h3>
                             <p>Why a strong brand identity is the foundation of every successful business in the UAE market.</p>
@@ -925,7 +925,7 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="c42-card">
-                        <img src="https://conceptsix.ae/wp-content/uploads/2025/10/freepik__a-sleek-digital-marketing-concept-modern-workspace__54560.webp" alt="Resource">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80" alt="Content Strategy Blog">
                         <div class="c42-text">
                             <h3>Content That Converts</h3>
                             <p>From cinematic video to social media clips, learn how content production drives measurable ROI.</p>
@@ -940,7 +940,7 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="c42-card">
-                        <img src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/art-board.webp" alt="Resource">
+                        <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&q=80" alt="SEO Blog">
                         <div class="c42-text">
                             <h3>SEO Trends You Can't Ignore</h3>
                             <p>The latest search engine optimization strategies that top Dubai agencies use to dominate rankings.</p>
@@ -955,7 +955,7 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="c42-card">
-                        <img src="https://conceptsix.ae/wp-content/uploads/2025/10/freepik__a-sleek-digital-marketing-concept-modern-workspace__54560.webp" alt="Resource">
+                        <img src="https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=800&q=80" alt="Social Media Blog">
                         <div class="c42-text">
                             <h3>Social Media Mastery</h3>
                             <p>Build communities, drive engagement, and convert followers into loyal customers across every platform.</p>
@@ -1109,22 +1109,27 @@
     <script src="script.js"></script>
     <script>
     // Resources Swiper
-    const resourceSwiper = new Swiper(".c42-swiper", {
-        effect: "coverflow",
-        centeredSlides: true,
-        slidesPerView: "auto",
-        loop: true,
-        speed: 900,
-        initialSlide: 2,
-        coverflowEffect: {
-            rotate: 0,
-            depth: 280,
-            modifier: 1,
-            slideShadows: false
-        }
+    document.addEventListener("DOMContentLoaded", function() {
+        const resourceSwiper = new Swiper(".c42-swiper", {
+            effect: "coverflow",
+            centeredSlides: true,
+            slidesPerView: "auto",
+            loop: true,
+            speed: 900,
+            initialSlide: 2,
+            grabCursor: true,
+            coverflowEffect: {
+                rotate: 0,
+                depth: 280,
+                modifier: 1,
+                slideShadows: false
+            },
+            navigation: {
+                prevEl: ".c42-btn--prev",
+                nextEl: ".c42-btn--next"
+            }
+        });
     });
-    document.querySelector(".c42-btn--prev").addEventListener("click", () => resourceSwiper.slidePrev());
-    document.querySelector(".c42-btn--next").addEventListener("click", () => resourceSwiper.slideNext());
     </script>
 </body>
 </html>

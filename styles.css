@@ -735,7 +735,7 @@ input, textarea, select {
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--accent);
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .section-tag.center {
@@ -1024,7 +1024,7 @@ input, textarea, select {
     font-family: var(--font-serif);
     font-style: italic;
     font-weight: 400;
-    color: var(--purple);
+    color: var(--accent);
 }
 
 .about-text {
@@ -1899,8 +1899,9 @@ color: #fff;
 
 .success-stories-title {
     font-family: var(--font-display);
-    font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+    font-size: clamp(2.2rem, 4.5vw, 4rem);
     font-weight: 800;
+    line-height: 1.1;
     color: var(--white);
     line-height: 1.1;
     margin-bottom: 1.5rem;
@@ -2208,8 +2209,9 @@ color: #fff;
 
 .client-logos-slider-title {
     font-family: var(--font-display);
-    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-size: clamp(2.2rem, 4.5vw, 4rem);
     font-weight: 800;
+    line-height: 1.1;
     color: var(--white);
     margin-bottom: 1rem;
 }
@@ -2293,8 +2295,9 @@ color: #fff;
 
 .c42-title {
     font-family: var(--font-display);
-    font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+    font-size: clamp(2.2rem, 4.5vw, 4rem);
     font-weight: 800;
+    line-height: 1.1;
     color: var(--white);
     margin-bottom: 1rem;
 }
@@ -2466,7 +2469,7 @@ color: #fff;
 
 .contact-title {
     font-family: var(--font-display);
-    font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+    font-size: clamp(2.2rem, 4.5vw, 4rem);
     font-weight: 800;
     line-height: 1.1;
     color: var(--white);
