@@ -34,9 +34,9 @@
     --text: #5a5750;
     --text-dim: #8a8780;
     --text-bright: #1a1a1a;
-    --accent: #7C3AED;
-    --accent-dark: #6D28D9;
-    --accent-glow: rgba(124, 58, 237, 0.25);
+    --accent: #C49500;
+    --accent-dark: #A67C00;
+    --accent-glow: rgba(196, 149, 0, 0.25);
     --purple: #7C3AED;
     --purple-dark: #6D28D9;
     --white: #0d0d0d;
@@ -58,7 +58,7 @@
 }
 
 [data-theme="light"] .nav-cta {
-    color: #ffffff;
+    color: #1a1a1a;
 }
 
 [data-theme="light"] .hero-badge-pill {
@@ -84,8 +84,8 @@
 }
 
 [data-theme="light"] .hero-ctas .btn-outline:hover {
-    border-color: var(--purple);
-    background: rgba(124, 58, 237, 0.06);
+    border-color: var(--accent);
+    background: rgba(196, 149, 0, 0.06);
 }
 
 [data-theme="light"] .hero-showcase::before {
@@ -128,7 +128,7 @@
 
 [data-theme="light"] .solutions-tab.active {
     background: var(--accent);
-    color: #ffffff;
+    color: #1a1a1a;
 }
 
 [data-theme="light"] .testimonial-card {
@@ -163,9 +163,9 @@
 }
 
 [data-theme="light"] .work-card-num {
-    color: #ffffff;
-    background: var(--purple);
-    border-color: var(--purple);
+    color: #1a1a1a;
+    background: rgba(196, 149, 0, 0.12);
+    border-color: rgba(196, 149, 0, 0.25);
 }
 
 [data-theme="light"] .footer {
@@ -179,24 +179,24 @@
 }
 
 [data-theme="light"] .btn-primary {
-    color: #ffffff;
+    color: #1a1a1a;
 }
 
 [data-theme="light"] .btn-primary svg {
-    stroke: #ffffff;
+    stroke: #1a1a1a;
 }
 
 [data-theme="light"] ::selection {
-    color: #ffffff;
+    color: #1a1a1a;
 }
 
 [data-theme="light"] .chatbot-toggle {
-    color: #ffffff;
-    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.35);
+    color: #1a1a1a;
+    box-shadow: 0 4px 20px rgba(196, 149, 0, 0.35);
 }
 
 [data-theme="light"] .chatbot-toggle:hover {
-    box-shadow: 0 6px 28px rgba(124, 58, 237, 0.45);
+    box-shadow: 0 6px 28px rgba(196, 149, 0, 0.45);
 }
 
 [data-theme="light"] .nav-cta:hover {
