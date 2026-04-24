@@ -183,8 +183,8 @@
 
 [data-theme="light"] .work-card-num {
     color: #1a1a1a;
-    background: rgba(255, 209, 0, 0.12);
-    border-color: rgba(255, 209, 0, 0.25);
+    background: rgba(255, 209, 0, 1);
+    border-color: rgba(255, 209, 0, 1);
 }
 
 [data-theme="light"] .footer {
