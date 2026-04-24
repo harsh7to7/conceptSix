@@ -3,9 +3,9 @@
    ============================================ */
 
 :root {
-    --bg: #0d0d0d;
-    --bg-elevated: #1a1a1a;
-    --bg-card: #1f1f1f;
+    --bg: #ffffff;
+    --bg-elevated: #ffffff;
+    --bg-card: #ffffff;
     --text: #b0ada6;
     --text-dim: #797B78;
     --text-bright: #E4E5E4;
@@ -63,11 +63,11 @@
 
 [data-theme="light"] .hero-badge-pill {
     border-color: rgba(0, 0, 0, 0.1);
-    background: rgba(0, 0, 0, 0.04);
+    background: var(--purple);
 }
 
 [data-theme="light"] .hero-badge-pill span {
-    color: #5a5750;
+    color: #fff;
 }
 
 [data-theme="light"] .hero-title {
