@@ -2109,6 +2109,11 @@ color: #fff;
     100% { transform: translateX(-50%); }
 }
 
+.brands-trust {
+    background: var(--bg);
+    overflow: hidden;
+}
+
 /* Client Logos Slider */
 .client-logos-slider {
     margin-top: 3rem;
