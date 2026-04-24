@@ -2398,8 +2398,9 @@ color: #fff;
     color: #0d0d0d;
 }
 
-.c42-btn.disabled {
-    opacity: 0.5;
+.c42-btn.disabled,
+.c42-btn.swiper-button-disabled {
+    opacity: 0.3;
     pointer-events: none;
 }
 
