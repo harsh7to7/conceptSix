@@ -1140,10 +1140,11 @@
     document.addEventListener("DOMContentLoaded", function() {
         // Case Studies Swiper
         new Swiper(".case-swiper", {
-            slidesPerView: 1.2,
+            slidesPerView: 1.15,
             centeredSlides: true,
             spaceBetween: 24,
             loop: true,
+            loopAdditionalSlides: 4,
             speed: 700,
             grabCursor: true,
             pagination: {
@@ -1155,8 +1156,8 @@
                 nextEl: ".case-btn--next"
             },
             breakpoints: {
-                768: { slidesPerView: 1.5 },
-                1024: { slidesPerView: 2.2 }
+                768: { slidesPerView: 1.4 },
+                1024: { slidesPerView: 1.8 }
             }
         });
 
