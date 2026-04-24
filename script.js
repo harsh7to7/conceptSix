@@ -539,52 +539,7 @@
         });
     });
 
-    // ---- SUCCESS STORIES CAROUSEL ----
-    const storiesTrackInner = document.getElementById('testimonialCarousel');
-    const storyCards = document.querySelectorAll('.success-story-card');
-    const dots = document.querySelectorAll('.testimonial-dot');
-    const prevBtn = document.getElementById('testimonialPrev');
-    const nextBtn = document.getElementById('testimonialNext');
-    let currentSlide = 0;
-    let autoplayInterval;
-
-    function goToSlide(index) {
-        if (!storyCards.length || !storiesTrackInner) return;
-        dots[currentSlide].classList.remove('active');
-        currentSlide = (index + storyCards.length) % storyCards.length;
-        dots[currentSlide].classList.add('active');
-        const card = storyCards[0];
-        const gap = parseFloat(getComputedStyle(storiesTrackInner).gap) || 20;
-        const offset = currentSlide * (card.offsetWidth + gap);
-        storiesTrackInner.style.transform = 'translateX(-' + offset + 'px)';
-    }
-
-    function startAutoplay() {
-        autoplayInterval = setInterval(() => goToSlide(currentSlide + 1), 4000);
-    }
-
-    function resetAutoplay() {
-        clearInterval(autoplayInterval);
-        startAutoplay();
-    }
-
-    if (prevBtn && nextBtn) {
-        prevBtn.addEventListener('click', () => { goToSlide(currentSlide - 1); resetAutoplay(); });
-        nextBtn.addEventListener('click', () => { goToSlide(currentSlide + 1); resetAutoplay(); });
-    }
-
-    const arrowLeft = document.getElementById('storiesArrowLeft');
-    const arrowRight = document.getElementById('storiesArrowRight');
-    if (arrowLeft && arrowRight) {
-        arrowLeft.addEventListener('click', () => { goToSlide(currentSlide - 1); resetAutoplay(); });
-        arrowRight.addEventListener('click', () => { goToSlide(currentSlide + 1); resetAutoplay(); });
-    }
-
-    dots.forEach((dot, i) => {
-        dot.addEventListener('click', () => { goToSlide(i); resetAutoplay(); });
-    });
-
-    startAutoplay();
+    // ---- CASE STUDIES (handled by Swiper in inline script) ----
 
     // ---- CONTACT FORM ----
     const contactForm = document.getElementById('contactForm');
