@@ -2109,6 +2109,93 @@ color: #fff;
     100% { transform: translateX(-50%); }
 }
 
+/* Client Logos Slider */
+.client-logos-slider {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow: hidden;
+}
+
+.client-logos-slider-header {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.client-logos-slider-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+
+.client-logos-slider-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.client-logos-row {
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+
+.client-logos-track {
+    display: flex;
+    gap: 1.25rem;
+    width: max-content;
+    animation: clientScroll 35s linear infinite;
+}
+
+.client-logos-row.reverse .client-logos-track {
+    animation: clientScrollReverse 35s linear infinite;
+}
+
+.client-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.2rem 2rem;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--bg-elevated);
+    flex-shrink: 0;
+    width: 200px;
+    height: 110px;
+    transition: border-color 0.3s;
+}
+
+.client-logo:hover {
+    border-color: var(--accent);
+}
+
+.client-logo img {
+    max-width: 100%;
+    max-height: 110px;
+    object-fit: contain;
+    opacity: 0.85;
+    transition: opacity 0.3s;
+}
+
+.client-logo:hover img {
+    opacity: 1;
+}
+
+@keyframes clientScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes clientScrollReverse {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+}
+
 /* ---- CONTACT ---- */
 .contact {
     position: relative;
