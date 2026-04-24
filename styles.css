@@ -1063,7 +1063,7 @@ input, textarea, select {
     font-family: var(--font-display);
     font-size: clamp(1.5rem, 3vw, 2.2rem);
     font-weight: 700;
-    color: var(--accent);
+    color: var(--purple);
 }
 
 .about-stat-label {
@@ -1136,29 +1136,26 @@ input, textarea, select {
     overflow: hidden;
 }
 
-/* Decorative background glow */
 .solutions::before {
     content: '';
     position: absolute;
-    top: -20%;
-    right: -10%;
-    width: 600px;
-    height: 600px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(255, 209, 0, 0.06) 0%, transparent 70%);
-    pointer-events: none;
+    inset: 0;
+    background: url('process-bg.png') center/cover no-repeat;
+    opacity: 0.35;
+    z-index: 0;
 }
 
 .solutions::after {
     content: '';
     position: absolute;
-    bottom: -15%;
-    left: -5%;
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(255, 209, 0, 0.04) 0%, transparent 70%);
-    pointer-events: none;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 20%, var(--bg) 75%);
+    z-index: 0;
+}
+
+.solutions .container {
+    position: relative;
+    z-index: 1;
 }
 
 .solutions .section-tag {
@@ -2383,8 +2380,8 @@ color: #fff;
     height: 54px;
     width: 54px;
     z-index: 2;
-    top: 160px;
-    left: 30px;
+    bottom: 24px;
+    right: 24px;
 }
 
 .c42-nav {
@@ -2438,7 +2435,7 @@ color: #fff;
     .c42-text h3 { font-size: 1.3rem; }
     .c42-text p { font-size: 0.85rem; }
     .c42-text { left: 20px; top: 28px; max-width: 240px; }
-    .swipe-arrow { top: 130px; left: 20px; }
+    .swipe-arrow { bottom: 20px; right: 20px; }
     .swipe-arrow svg { width: 44px; height: 44px; }
 }
 
