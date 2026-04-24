@@ -58,7 +58,7 @@
 }
 
 [data-theme="light"] .nav-cta {
-    color: #ffffff;
+    color: #0e0e0e;
 }
 
 [data-theme="light"] .hero-badge-pill {
@@ -128,7 +128,7 @@
 
 [data-theme="light"] .solutions-tab.active {
     background: var(--accent);
-    color: #ffffff;
+    color: #0e0e0e;
 }
 
 [data-theme="light"] .testimonial-card {
@@ -179,11 +179,11 @@
 }
 
 [data-theme="light"] .btn-primary {
-    color: #ffffff;
+    color: #0e0e0e;
 }
 
 [data-theme="light"] .btn-primary svg {
-    stroke: #ffffff;
+    stroke: #0e0e0e;
 }
 
 [data-theme="light"] ::selection {
@@ -858,7 +858,7 @@ input, textarea, select {
 
 .hero-ctas .btn-primary {
     background: var(--accent);
-    color: #fff;
+    color: #0e0e0e;
 }
 
 .hero-ctas .btn-primary:hover {
