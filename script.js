@@ -466,7 +466,7 @@
 
     // Close on escape
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && showreelFullscreen.classList.contains('active')) {
+        if (e.key === 'Escape' && showreelFullscreen && showreelFullscreen.classList.contains('active')) {
             showreelClose.click();
         }
     });
@@ -539,8 +539,9 @@
         });
     });
 
-    // ---- TESTIMONIALS CAROUSEL ----
-    const slides = document.querySelectorAll('.testimonial-slide');
+    // ---- SUCCESS STORIES CAROUSEL ----
+    const storiesTrackInner = document.getElementById('testimonialCarousel');
+    const storyCards = document.querySelectorAll('.success-story-card');
     const dots = document.querySelectorAll('.testimonial-dot');
     const prevBtn = document.getElementById('testimonialPrev');
     const nextBtn = document.getElementById('testimonialNext');
@@ -548,15 +549,18 @@
     let autoplayInterval;
 
     function goToSlide(index) {
-        slides[currentSlide].classList.remove('active');
+        if (!storyCards.length || !storiesTrackInner) return;
         dots[currentSlide].classList.remove('active');
-        currentSlide = (index + slides.length) % slides.length;
-        slides[currentSlide].classList.add('active');
+        currentSlide = (index + storyCards.length) % storyCards.length;
         dots[currentSlide].classList.add('active');
+        const card = storyCards[0];
+        const gap = parseFloat(getComputedStyle(storiesTrackInner).gap) || 20;
+        const offset = currentSlide * (card.offsetWidth + gap);
+        storiesTrackInner.style.transform = 'translateX(-' + offset + 'px)';
     }
 
     function startAutoplay() {
-        autoplayInterval = setInterval(() => goToSlide(currentSlide + 1), 5000);
+        autoplayInterval = setInterval(() => goToSlide(currentSlide + 1), 4000);
     }
 
     function resetAutoplay() {
@@ -567,6 +571,13 @@
     if (prevBtn && nextBtn) {
         prevBtn.addEventListener('click', () => { goToSlide(currentSlide - 1); resetAutoplay(); });
         nextBtn.addEventListener('click', () => { goToSlide(currentSlide + 1); resetAutoplay(); });
+    }
+
+    const arrowLeft = document.getElementById('storiesArrowLeft');
+    const arrowRight = document.getElementById('storiesArrowRight');
+    if (arrowLeft && arrowRight) {
+        arrowLeft.addEventListener('click', () => { goToSlide(currentSlide - 1); resetAutoplay(); });
+        arrowRight.addEventListener('click', () => { goToSlide(currentSlide + 1); resetAutoplay(); });
     }
 
     dots.forEach((dot, i) => {
