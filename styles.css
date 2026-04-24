@@ -2037,6 +2037,11 @@ color: #fff;
     color: #0d0d0d;
 }
 
+.case-btn.swiper-button-disabled {
+    opacity: 0.3;
+    pointer-events: none;
+}
+
 .case-pagination {
     display: flex;
     gap: 0.4rem;
