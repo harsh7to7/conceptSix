@@ -2685,7 +2685,7 @@ color: #fff;
     .container { padding: 0 1.5rem; }
     .section { padding: 60px 0; }
     .services-track { padding: 0 1.5rem; }
-    .service-card { flex: 0 0 300px; height: 400px; }
+    .service-card { flex: 0 0 280px; height: 380px; }
     .work-grid { grid-template-columns: 1fr; }
     .work-card-media { height: 200px; }
     .process-grid { grid-template-columns: 1fr; }
@@ -2694,8 +2694,22 @@ color: #fff;
     .form-row { grid-template-columns: 1fr; }
     .footer-top { grid-template-columns: 1fr; }
     .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
-    .hero { padding: 100px 1.5rem 0; }
+    .theme-toggle { right: 1rem; width: 36px; height: 36px; }
+    .section { padding: 50px 0; }
+    .about-intro { margin-bottom: 2.5rem; }
+    .about-title { font-size: clamp(1.8rem, 5vw, 2.5rem); }
+    .solutions-title, .services-title, .process-title, .work-title, .case-studies-title, .contact-title, .c42-title, .client-logos-slider-title { font-size: clamp(1.8rem, 5vw, 2.5rem); }
+    .solutions-header { margin-bottom: 2rem; }
+    .process-header { margin-bottom: 2.5rem; }
+    .case-card-stats { gap: 1.2rem; }
+    .case-stat-num { font-size: 1.3rem; }
+    .contact-grid { gap: 2rem; }
+    .services-track-wrapper { padding: 0 0 50px; }
+    .hero { padding: 60px 1.5rem 0; height: auto; min-height: 100vh; }
     .hero-title { font-size: clamp(1.5rem, 6vw, 2.2rem); }
+    .hero-sub { font-size: 0.85rem; max-width: 90%; }
+    .hero-badge-pill { margin-bottom: 1rem; padding: 0.4rem 1rem; }
+    .hero-badge-pill span { font-size: 0.7rem; }
     .hero-card { width: 150px; height: 260px; }
     .hero-card--short { height: 210px; }
     .hero-card--tall { height: 300px; }
@@ -2703,10 +2717,11 @@ color: #fff;
         0% { transform: translateX(0); }
         100% { transform: translateX(calc(-150px * 8 - 14px * 8)); }
     }
-    .showreel { height: 60vh; }
+    .showreel { height: 50vh; min-height: 350px; }
 }
 
 @media (max-width: 480px) {
+    .hero { padding: 50px 1rem 0; }
     .hero-ctas { flex-direction: column; align-items: stretch; }
     .btn { width: 100%; justify-content: center; }
     .about-features { grid-template-columns: 1fr; }
@@ -2719,6 +2734,34 @@ color: #fff;
         0% { transform: translateX(0); }
         100% { transform: translateX(calc(-120px * 8 - 14px * 8)); }
     }
+    .container { padding: 0 1rem; }
+    .nav { padding: 1rem 1rem; }
+    .nav.scrolled { padding: 0.8rem 1rem; }
+    .theme-toggle { right: 0.75rem; width: 34px; height: 34px; }
+    .section { padding: 40px 0; }
+    .hero-title { font-size: clamp(1.3rem, 7vw, 1.8rem); margin-bottom: 0.8rem; }
+    .hero-sub { font-size: 0.8rem; margin-bottom: 1rem; }
+    .hero-ctas { margin-bottom: 1.5rem; }
+    .btn { padding: 0.85rem 1.5rem; font-size: 0.8rem; }
+    .service-card { flex: 0 0 260px; height: 350px; }
+    .services-track { padding: 0 1rem; gap: 1rem; }
+    .case-card-content { padding: 1.2rem; }
+    .case-card-name { font-size: 1.1rem; }
+    .case-card-desc { font-size: 0.85rem; margin-bottom: 1rem; }
+    .case-card-media { height: 180px; }
+    .partner-logos-grid { gap: 1.5rem; }
+    .partner-logo-item { padding: 1rem 1.5rem; }
+    .partner-logo-item img { height: 40px; }
+    .contact-text { font-size: 0.9rem; margin-bottom: 1.5rem; }
+    .footer { padding: 3rem 0 1.5rem; }
+    .footer-top { padding-bottom: 2rem; gap: 1.5rem; }
+    .c42-resources { padding: 0 15px 50px; }
+    .chatbot-widget { bottom: 1rem; right: 1rem; }
+    .chatbot-toggle { width: 48px; height: 48px; }
+    .showreel { height: 40vh; min-height: 280px; }
+    .showreel-play { width: 80px; height: 80px; }
+    .client-logo { width: 160px; height: 90px; padding: 1rem 1.5rem; }
+    .client-logo img { min-height: 80px; max-height: 80px; }
 }
 
 /* ---- CHATBOT WIDGET ---- */
