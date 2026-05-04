@@ -230,14 +230,8 @@
     function initHeroAnimation() {
         const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
-        // Badge pill fade in
-        tl.to('.hero-badge-pill', {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-        })
         // Title lines reveal
-        .to('.hero-line-inner', {
+        tl.to('.hero-line-inner', {
             y: 0,
             duration: 1.2,
             stagger: 0.12,
@@ -249,6 +243,12 @@
             y: 0,
             duration: 0.8,
         }, '-=0.5')
+        // CTA buttons
+        .to('.hero-ctas', {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+        }, '-=0.4')
         // Showcase carousel
         .to('.hero-showcase', {
             opacity: 1,
@@ -266,8 +266,8 @@
 
     // Initial states for hero
     gsap.set(nav, { opacity: 0, y: -20 });
-    gsap.set('.hero-badge-pill', { opacity: 0, y: 15 });
     gsap.set('.hero-sub', { opacity: 0, y: 15 });
+    gsap.set('.hero-ctas', { opacity: 0, y: 15 });
     gsap.set('.hero-showcase', { opacity: 0, y: 30 });
 
     // ---- VIDEO PLAYBACK ON SCROLL ----
@@ -275,7 +275,7 @@
         // Lazy-play videos when they enter viewport
         const allVideos = document.querySelectorAll('video');
         allVideos.forEach(video => {
-            if (video.closest('.hero') || video.closest('.showreel-fullscreen')) return;
+            if (video.closest('.hero')) return;
 
             ScrollTrigger.create({
                 trigger: video,
@@ -356,31 +356,6 @@
         });
     });
 
-    // ---- SOLUTIONS TABS ----
-    const solutionTabs = document.querySelectorAll('.solutions-tab');
-    const solutionPanels = document.querySelectorAll('.solutions-panel');
-
-    solutionTabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            const target = tab.getAttribute('data-tab');
-
-            solutionTabs.forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
-
-            solutionPanels.forEach(panel => {
-                panel.classList.remove('active');
-                if (panel.id === 'panel-' + target) {
-                    panel.classList.add('active');
-                    // Animate cards in
-                    gsap.fromTo(panel.querySelectorAll('.solution-card'),
-                        { opacity: 0, y: 20 },
-                        { opacity: 1, y: 0, duration: 0.5, stagger: 0.06, ease: 'power3.out' }
-                    );
-                }
-            });
-        });
-    });
-
     // ---- HORIZONTAL SCROLL SERVICES ----
     const servicesTrack = document.getElementById('servicesTrack');
     if (servicesTrack) {
@@ -417,59 +392,6 @@
         });
     }
 
-    // ---- SHOWREEL ----
-    const showreelPlay = document.getElementById('showreelPlay');
-    const showreelClose = document.getElementById('showreelClose');
-    const showreelFullscreen = document.getElementById('showreelFullscreen');
-    const showreelFullVideo = document.getElementById('showreelFullVideo');
-    const showreelVideo = document.getElementById('showreelVideo');
-
-    // Parallax on showreel
-    gsap.to('.showreel-video', {
-        yPercent: 15,
-        ease: 'none',
-        scrollTrigger: {
-            trigger: '.showreel',
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: true,
-        }
-    });
-
-    // Auto-play showreel background when visible
-    ScrollTrigger.create({
-        trigger: '.showreel',
-        start: 'top bottom',
-        end: 'bottom top',
-        onEnter: () => showreelVideo && showreelVideo.play().catch(() => {}),
-        onLeave: () => showreelVideo && showreelVideo.pause(),
-        onEnterBack: () => showreelVideo && showreelVideo.play().catch(() => {}),
-        onLeaveBack: () => showreelVideo && showreelVideo.pause(),
-    });
-
-    if (showreelPlay) {
-        showreelPlay.addEventListener('click', () => {
-            showreelFullscreen.classList.add('active');
-            showreelFullVideo.play();
-            lenis.stop();
-        });
-    }
-
-    if (showreelClose) {
-        showreelClose.addEventListener('click', () => {
-            showreelFullscreen.classList.remove('active');
-            showreelFullVideo.pause();
-            showreelFullVideo.currentTime = 0;
-            lenis.start();
-        });
-    }
-
-    // Close on escape
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && showreelFullscreen && showreelFullscreen.classList.contains('active')) {
-            showreelClose.click();
-        }
-    });
 
     // ---- PORTFOLIO PARALLAX ----
     gsap.utils.toArray('.work-item').forEach((item, i) => {
@@ -519,16 +441,16 @@
         });
     });
 
-    // ---- PROCESS STAGGER ----
-    gsap.utils.toArray('.process-step').forEach((step, i) => {
-        gsap.set(step, { opacity: 0, y: 50 });
+    // ---- FRAMEWORK STAGGER ----
+    gsap.utils.toArray('.framework-card').forEach((card, i) => {
+        gsap.set(card, { opacity: 0, y: 50 });
 
         ScrollTrigger.create({
-            trigger: step,
+            trigger: card,
             start: 'top 88%',
             once: true,
             onEnter: () => {
-                gsap.to(step, {
+                gsap.to(card, {
                     opacity: 1,
                     y: 0,
                     duration: 0.8,
