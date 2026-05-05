@@ -3602,8 +3602,8 @@ input, textarea, select {
 
 
 .testi-swiper {
-    padding: 0 2rem;
-    overflow: visible !important;
+    padding: 0;
+    overflow: hidden;
 }
 
 .testi-card {
@@ -3704,7 +3704,7 @@ input, textarea, select {
         gap: 1rem;
     }
     .testi-swiper {
-        padding: 0 1rem;
+        padding: 0;
     }
     .testi-card {
         border-radius: 24px;

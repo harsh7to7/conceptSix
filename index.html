@@ -796,8 +796,7 @@
                     </button>
                 </div>
             </div>
-        </div>
-        <div class="swiper testi-swiper">
+            <div class="swiper testi-swiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <div class="testi-card">
@@ -1276,9 +1275,9 @@
 
         // Testimonial Swiper
         new Swiper(".testi-swiper", {
-            slidesPerView: 1.5,
+            slidesPerView: 2,
             centeredSlides: true,
-            spaceBetween: 20,
+            spaceBetween: 12,
             speed: 700,
             grabCursor: true,
             loop: true,
@@ -1287,9 +1286,9 @@
                 nextEl: ".testi-btn--next"
             },
             breakpoints: {
-                640: { slidesPerView: 2.5 },
-                768: { slidesPerView: 3.5 },
-                1024: { slidesPerView: 4.5, spaceBetween: 24 }
+                640: { slidesPerView: 3, spaceBetween: 12 },
+                768: { slidesPerView: 4, spaceBetween: 14 },
+                1024: { slidesPerView: 5, spaceBetween: 16 }
             }
         });
     });
