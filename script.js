@@ -237,6 +237,12 @@
             stagger: 0.12,
             ease: 'power4.out',
         }, '-=0.3')
+        // Born in Dubai
+        .to('.hero-born', {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+        }, '-=0.5')
         // Subtitle
         .to('.hero-sub', {
             opacity: 1,
@@ -266,6 +272,7 @@
 
     // Initial states for hero
     gsap.set(nav, { opacity: 0, y: -20 });
+    gsap.set('.hero-born', { opacity: 0, y: 15 });
     gsap.set('.hero-sub', { opacity: 0, y: 15 });
     gsap.set('.hero-ctas', { opacity: 0, y: 15 });
     gsap.set('.hero-showcase', { opacity: 0, y: 30 });
