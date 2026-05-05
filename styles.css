@@ -1386,7 +1386,7 @@ input, textarea, select {
 
 /* ---- SERVICES ---- */
 .services {
-    padding-bottom: 0;
+    padding-bottom: 80px;
     background: linear-gradient(180deg, rgba(168, 85, 247, 0.03) 0%, rgba(168, 85, 247, 0.12) 50%, rgba(168, 85, 247, 0.03) 100%);
 }
 
@@ -2115,9 +2115,6 @@ input, textarea, select {
     align-items: center;
     gap: 1.5rem;
     margin-top: 2rem;
-    width: 100%;
-    padding: 0 3rem;
-    box-sizing: border-box;
 }
 
 /* Unified slider buttons */
