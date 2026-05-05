@@ -413,25 +413,6 @@
         });
     });
 
-    // ---- FRAMEWORK STAGGER ----
-    gsap.utils.toArray('.framework-card').forEach((card, i) => {
-        gsap.set(card, { opacity: 0, y: 50 });
-
-        ScrollTrigger.create({
-            trigger: card,
-            start: 'top 88%',
-            once: true,
-            onEnter: () => {
-                gsap.to(card, {
-                    opacity: 1,
-                    y: 0,
-                    duration: 0.8,
-                    delay: i * 0.1,
-                    ease: 'power3.out',
-                });
-            }
-        });
-    });
 
     // ---- CASE STUDIES (handled by Swiper in inline script) ----
 
