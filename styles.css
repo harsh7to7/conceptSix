@@ -2606,6 +2606,16 @@ input, textarea, select {
     margin-top: 2px;
 }
 
+.contact-map {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+.contact-map iframe {
+    display: block;
+}
+
 .contact-socials {
     display: flex;
     gap: 1rem;
