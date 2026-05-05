@@ -1393,117 +1393,132 @@ input, textarea, select {
     padding-bottom: 0;
 }
 
-.services .container {
-    padding-top: 0;
-    padding-bottom: 1rem;
+.services-header {
+    text-align: center;
+    margin-bottom: 3rem;
 }
 
 .services-title {
     font-family: var(--font-display);
     font-size: clamp(2.2rem, 4.5vw, 4rem);
     font-weight: 800;
-    color: var(--white);
-    margin-bottom: 1.2rem;
+    color: var(--text-bright);
+    margin-bottom: 0.5rem;
 }
 
-.services-track-wrapper {
-    overflow: hidden;
-    padding: 0 0 80px;
+.services-sub {
+    font-size: 1.05rem;
+    color: var(--text);
+    max-width: 500px;
+    margin: 0 auto;
 }
 
-.services-track {
-    display: flex;
+.services-modules {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
-    padding: 0 3rem;
-    will-change: transform;
 }
 
-.service-card {
-    flex: 0 0 420px;
-    height: 500px;
-    position: relative;
+.service-module {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
     border-radius: var(--radius);
-    overflow: hidden;
-    cursor: pointer;
-}
-
-.service-card-video {
-    position: absolute;
-    inset: 0;
-    transition: transform 0.8s var(--ease-out);
-}
-
-.service-card-video::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        to top,
-        rgba(14, 14, 14, 0.95) 0%,
-        rgba(14, 14, 14, 0.4) 50%,
-        rgba(14, 14, 14, 0.2) 100%
-    );
-}
-
-.service-card:hover .service-card-video {
-    transform: scale(1.08);
-}
-
-.service-card-content {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
     padding: 2rem;
-    z-index: 2;
-}
-.showreel-play {
-color: #fff;
-}
-.showreel-play svg {
-    fill: #fff;
-}
-video#showreelVideo {
-    top: -25%;
-    position: relative;
-    height: 160%;
-}
-.service-card-num {
-    font-family: var(--font-display);
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    color: var(--accent);
-    display: block;
-    margin-bottom: 0.8rem;
+    text-decoration: none;
+    transition: all 0.4s var(--ease-out);
+    display: flex;
+    flex-direction: column;
 }
 
-.service-card-title {
-font-family: var(--font-display);
-font-size: 1.6rem;
-font-weight: 700;
-color: var(--white);
-margin-bottom: 0.6rem;
+.service-module:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
 }
-#services .service-card-desc,
-#services h3.service-card-title {
-color: #fff;
+
+.service-module-top {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
 }
-#services .service-card-num {
-    color: #fff;
+
+.service-module-icon {
+    color: var(--accent);
+    flex-shrink: 0;
 }
-.service-card-desc {
+
+.service-module-title {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-bright);
+    flex: 1;
+}
+
+.service-module-arrow {
+    font-size: 1.3rem;
+    color: var(--text-dim);
+    transition: color 0.3s, transform 0.3s;
+    flex-shrink: 0;
+}
+
+.service-module:hover .service-module-arrow {
+    color: var(--accent);
+    transform: translateX(4px);
+}
+
+.service-module-desc {
     font-size: 0.9rem;
     line-height: 1.6;
     color: var(--text);
-    opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.5s var(--ease-out), transform 0.5s var(--ease-out);
+    margin-bottom: 1.2rem;
 }
 
-.service-card:hover .service-card-desc {
-    opacity: 1;
-    transform: translateY(0);
+.service-module-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.service-module-list li {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--text-dim);
+    background: rgba(255, 209, 0, 0.06);
+    border: 1px solid rgba(255, 209, 0, 0.1);
+    padding: 0.35rem 0.75rem;
+    border-radius: 100px;
+    letter-spacing: 0.02em;
+}
+
+[data-theme="light"] .service-module {
+    background: #fff;
+    border-color: rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .service-module:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .service-module-list li {
+    background: rgba(0, 0, 0, 0.03);
+    border-color: rgba(0, 0, 0, 0.06);
+}
+
+@media (max-width: 1024px) {
+    .services-modules {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .services-modules {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* ---- SHOWREEL ---- */

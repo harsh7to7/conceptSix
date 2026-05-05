@@ -363,41 +363,6 @@
         });
     });
 
-    // ---- HORIZONTAL SCROLL SERVICES ----
-    const servicesTrack = document.getElementById('servicesTrack');
-    if (servicesTrack) {
-        const cards = servicesTrack.querySelectorAll('.service-card');
-        const trackWrapper = document.querySelector('.services-track-wrapper');
-
-        const getScrollAmount = () => {
-            return servicesTrack.scrollWidth - trackWrapper.offsetWidth;
-        };
-
-        gsap.to(servicesTrack, {
-            x: () => -getScrollAmount(),
-            ease: 'none',
-            scrollTrigger: {
-                trigger: trackWrapper,
-                start: 'top 15%',
-                end: () => '+=' + (getScrollAmount() * 1.2),
-                scrub: 0.6,
-                pin: trackWrapper,
-                pinSpacing: true,
-                invalidateOnRefresh: true,
-            }
-        });
-
-        // Play videos on hover
-        cards.forEach(card => {
-            const video = card.querySelector('video');
-            card.addEventListener('mouseenter', () => {
-                if (video) video.play().catch(() => {});
-            });
-            card.addEventListener('mouseleave', () => {
-                if (video) video.pause();
-            });
-        });
-    }
 
 
     // ---- PORTFOLIO PARALLAX ----
