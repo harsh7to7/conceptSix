@@ -2109,12 +2109,16 @@ input, textarea, select {
     margin-top: 0.3rem;
 }
 
-.case-nav {
+/* Unified slider nav */
+.case-nav,
+.c42-nav,
+.testi-nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1.5rem;
-    margin-top: 2rem;
+    gap: 1rem;
+    max-width: 290px;
+    margin: 2rem auto 0;
 }
 
 /* Unified slider buttons */
@@ -2134,6 +2138,7 @@ input, textarea, select {
     cursor: pointer;
     transition: all 0.3s var(--ease-out);
     padding: 0;
+    min-width: 50px;
 }
 
 .slider-btn:hover,
@@ -2485,10 +2490,6 @@ input, textarea, select {
 }
 
 .c42-nav {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin-top: 15px;
     position: relative;
     z-index: 10;
 }
@@ -3592,10 +3593,6 @@ input, textarea, select {
     text-transform: uppercase;
 }
 
-.testi-nav {
-    display: flex;
-    gap: 0.75rem;
-}
 
 
 .testi-swiper {
