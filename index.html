@@ -923,6 +923,7 @@
                 <button class="testi-btn testi-btn--prev" aria-label="Previous">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
                 </button>
+                <div class="testi-pagination"></div>
                 <button class="testi-btn testi-btn--next" aria-label="Next">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
                 </button>
@@ -1049,6 +1050,7 @@
             <button class="c42-btn c42-btn--prev" aria-label="Previous slide">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
             </button>
+            <div class="c42-pagination"></div>
             <button class="c42-btn c42-btn--next" aria-label="Next slide">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
             </button>
@@ -1237,6 +1239,10 @@
                 modifier: 1,
                 slideShadows: false
             },
+            pagination: {
+                el: ".c42-pagination",
+                clickable: true
+            },
             navigation: {
                 prevEl: ".c42-btn--prev",
                 nextEl: ".c42-btn--next"
@@ -1281,6 +1287,10 @@
             speed: 700,
             grabCursor: true,
             loop: true,
+            pagination: {
+                el: ".testi-pagination",
+                clickable: true
+            },
             navigation: {
                 prevEl: ".testi-btn--prev",
                 nextEl: ".testi-btn--next"

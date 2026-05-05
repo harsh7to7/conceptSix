@@ -2162,12 +2162,17 @@ input, textarea, select {
 [data-theme="light"] .case-btn,
 [data-theme="light"] .c42-btn,
 
-.case-pagination {
+/* Unified pagination dots */
+.case-pagination,
+.testi-pagination,
+.c42-pagination {
     display: flex;
     gap: 0.4rem;
 }
 
-.case-pagination .swiper-pagination-bullet {
+.case-pagination .swiper-pagination-bullet,
+.testi-pagination .swiper-pagination-bullet,
+.c42-pagination .swiper-pagination-bullet {
     width: 28px;
     height: 5px;
     border-radius: 3px;
@@ -2176,7 +2181,9 @@ input, textarea, select {
     transition: all 0.4s var(--ease-out);
 }
 
-.case-pagination .swiper-pagination-bullet-active {
+.case-pagination .swiper-pagination-bullet-active,
+.testi-pagination .swiper-pagination-bullet-active,
+.c42-pagination .swiper-pagination-bullet-active {
     background: var(--accent);
     width: 44px;
 }
