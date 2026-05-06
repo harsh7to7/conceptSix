@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONCEPTSIX | Creative Agency Dubai</title>
+    <meta name="description" content="ConceptSix is a full-service creative agency in Dubai offering web development, brand strategy, content production, and professional photography.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Zacbelx';
+            src: url('https://conceptsix.ae/wp-content/uploads/2025/06/zacbelx-medium.ttf') format('truetype');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+    </style>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <link rel="stylesheet" href="styles-2.css">
+</head>
+<body>
+    <!-- Grain Overlay -->
+    <div class="grain-overlay"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-ring"></div>
+    </div>
+
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <!-- Curtain panels -->
+        <div class="preloader-curtain preloader-curtain-left"></div>
+        <div class="preloader-curtain preloader-curtain-right"></div>
+
+        <!-- Center content -->
+        <div class="preloader-center">
+            <div class="preloader-logo-wrap">
+                <svg class="preloader-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310.9 511.8">
+                    <path class="preloader-path" d="M240.6,51.1l42.9,44.3-103.5,102c.3.6.8.5,1.4.6,4.5,1.1,9.5,1.7,14,2.8,56.5,14.7,102.7,61.6,115.4,118.3-.3.4-.8.4-1.2.4-4.7.5-9.8-.4-14.5-.4-13-.2-25.9,0-38.8-.4-2.5,0-8.6.5-10.5,0s-.7-.4-.8-.7c-1.7-3.6-3.2-7.4-5.2-10.9-24.8-43.4-79.3-56.8-126.4-38s-19.4,10.2-28.2,18.5-18.6,23.7-21.1,37.3c-5.5,30.3-1.2,59.7,17.2,84.9,37.1,50.8,115.1,52.7,152.8,1.6,4.5-6.1,8.3-12.7,11.3-19.7,7.8.1,15.6,0,23.5,0,1,0,2,.4,3.1.4,11.8.1,25.8-1,37.3,0s1.7.2,1.8.7c-3,13.3-8.1,26.4-14.6,38.3-39.5,72.7-130,101.3-205.2,65.1C5.8,455.1-27.3,347.3,25.2,266.1L91.4,83.3l58,21.4-18,50.8c0,.5-.3,1.6.6,1.3l107.8-106.1.8.4Z" fill="none" stroke="#FFD100" stroke-width="2"/>
+                    <g>
+                        <path class="preloader-path" d="M154.9,91.8l-58.4-21.8-.3-.7,5.2-14,57.8,21c.6.4.4,1.2.3,1.9-.9,4.3-4.2,9-4.6,13.6Z" fill="none" stroke="#FFD100" stroke-width="2"/>
+                        <path class="preloader-path" d="M150.4,41.7c.1,0,.9,1.2,2.1.8l16.9,6.3.3,1.4-4.8,13.2-58.6-22.2,5.1-13.9h.6c12.4,4.4,24.6,9.3,37,14s1,0,1.5.3Z" fill="none" stroke="#FFD100" stroke-width="2"/>
+                        <path class="preloader-path" d="M179.6,21.2c.9.9-4.3,12-4.3,14.1h-1.3s-57.4-21.1-57.4-21.1L121.2,0h.9c0,0,57.4,21.2,57.4,21.2Z" fill="none" stroke="#FFD100" stroke-width="2"/>
+                    </g>
+                </svg>
+                <!-- Glow ring behind logo -->
+                <div class="preloader-glow"></div>
+            </div>
+
+            <div class="preloader-text">
+                <span class="preloader-word">CONCEPT</span><span class="preloader-word accent">SIX</span>
+            </div>
+
+            <div class="preloader-counter">
+                <div class="preloader-bar">
+                    <div class="preloader-progress" id="preloaderProgress"></div>
+                </div>
+                <div class="preloader-count" id="preloaderCount">0</div>
+            </div>
+
+            <div class="preloader-tagline">Loading Experience</div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <a href="#" class="nav-logo"><img src="https://conceptsix.ae/wp-content/uploads/2025/06/cs-yello-512.svg" alt="ConceptSix" class="nav-logo-img"></a>
+        <div class="nav-links" id="navLinks">
+            <a href="#hero" class="nav-link" data-nav>Home</a>
+            <a href="#about" class="nav-link" data-nav>About Us</a>
+            <a href="#services" class="nav-link" data-nav>Services</a>
+            <a href="#" class="nav-link" data-nav>Industries</a>
+            <a href="#work" class="nav-link" data-nav>Case Studies</a>
+            <a href="#" class="nav-link" data-nav>Blogs</a>
+            <a href="#" class="nav-link" data-nav>Careers</a>
+            <a href="#" class="nav-link" data-nav>FAQs</a>
+            <a href="#contact" class="nav-link" data-nav>Contact Us</a>
+        </div>
+        <a href="#contact" class="nav-cta" data-magnetic>Let's Talk</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg class="theme-icon theme-icon--dark" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="theme-icon theme-icon--light" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="4.22" x2="19.78" y2="5.64"/></svg>
+    </button>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-inner">
+            <a href="#hero" class="mobile-link">Home</a>
+            <a href="#about" class="mobile-link">About Us</a>
+            <a href="#services" class="mobile-link">Services</a>
+            <a href="#" class="mobile-link">Industries</a>
+            <a href="#work" class="mobile-link">Case Studies</a>
+            <a href="#" class="mobile-link">Blogs</a>
+            <a href="#" class="mobile-link">Careers</a>
+            <a href="#" class="mobile-link">FAQs</a>
+            <a href="#contact" class="mobile-link">Contact Us</a>
+            <a href="#contact" class="mobile-link mobile-cta">Let's Talk →</a>
+        </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="hero">
+        <!-- Main headline -->
+        <h1 class="hero-title">
+            <span class="hero-line"><span class="hero-line-inner">WE BUILD BRANDS</span></span>
+            <span class="hero-line"><span class="hero-line-inner">THAT <em>DOMINATE</em> DIGITAL</span></span>
+        </h1>
+        <p class="hero-born">Born in Dubai</p>
+
+        <!-- Subtitle -->
+        <p class="hero-sub">Strategy, design, and production crafted to generate visibility, trust, and inbound demand.</p>
+
+        <!-- CTA Buttons -->
+        <div class="hero-ctas">
+            <a href="#contact" class="btn btn-primary" data-magnetic>
+                <span>Get a Free Strategy Call</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><polygon points="22,2 15,22 11,13 2,9"/></svg>
+            </a>
+            <a href="#contact" class="btn btn-outline" data-magnetic>
+                <span>See Our Work</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+        </div>
+
+        <!-- Scrolling showcase cards -->
+        <div class="hero-showcase">
+            <div class="hero-showcase-track">
+                <div class="hero-card hero-card--short">
+                    <video muted loop playsinline autoplay>
+                        <source src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_207cee48bc6541caa15a0e30786407da.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="hero-card">
+                    <img src="https://conceptsix.ae/wp-content/uploads/2025/10/freepik__a-sleek-digital-marketing-concept-modern-workspace__54560.webp" alt="Digital Marketing" loading="lazy">
+                </div>
+                <div class="hero-card hero-card--short">
+                    <video muted loop playsinline autoplay>
+                        <source src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_7f58416b488a4c779fd698d5a2c591d6.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="hero-card">
+                    <img src="https://conceptsix.ae/wp-content/uploads/2025/10/modern-equipped-computer-lab-scaled.webp" alt="Computer Lab" loading="lazy">
+                </div>
+                <div class="hero-card hero-card--tall">
+                    <video muted loop playsinline autoplay>
+                        <source src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_1b0bbf4b0c5842178cee90f04976ee6a.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="hero-card hero-card--short">
+                    <img src="https://conceptsix.ae/wp-content/uploads/2025/10/freepik__assistant__12573-1.webp" alt="Creative Work" loading="lazy">
+                </div>
+                <div class="hero-card">
+                    <video muted loop playsinline autoplay>
+                        <source src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_7ebf3650b7a9484cb57c45c7d7089f55.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="hero-card hero-card--short">
+                    <img src="https://conceptsix.ae/wp-content/uploads/2025/10/freepik__a-sleek-digital-marketing-concept-modern-workspace__54560.webp" alt="Digital Marketing" loading="lazy">
+                </div>
+                <!-- Duplicate set for seamless loop -->
+                <div class="hero-card">
+                    <video muted loop playsinline autoplay>
+                        <source src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_207cee48bc6541caa15a0e30786407da.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="hero-card hero-card--short">
+                    <img src="https://conceptsix.ae/wp-content/uploads/2025/10/freepik__a-sleek-digital-marketing-concept-modern-workspace__54560.webp" alt="Digital Marketing" loading="lazy">
+                </div>
+                <div class="hero-card">
+                    <video muted loop playsinline autoplay>
+                        <source src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_7f58416b488a4c779fd698d5a2c591d6.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="hero-card hero-card--short">
+                    <img src="https://conceptsix.ae/wp-content/uploads/2025/10/modern-equipped-computer-lab-scaled.webp" alt="Computer Lab" loading="lazy">
+                </div>
+                <div class="hero-card hero-card--tall">
+                    <video muted loop playsinline autoplay>
+                        <source src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_1b0bbf4b0c5842178cee90f04976ee6a.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="hero-card">
+                    <img src="https://conceptsix.ae/wp-content/uploads/2025/10/freepik__assistant__12573-1.webp" alt="Creative Work" loading="lazy">
+                </div>
+                <div class="hero-card hero-card--short">
+                    <video muted loop playsinline autoplay>
+                        <source src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_7ebf3650b7a9484cb57c45c7d7089f55.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="hero-card">
+                    <img src="https://conceptsix.ae/wp-content/uploads/2025/10/freepik__a-sleek-digital-marketing-concept-modern-workspace__54560.webp" alt="Digital Marketing" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS BAR -->
+    <section class="stats-bar section">
+        <div class="container">
+            <div class="hero-badge-pill about-trust-pill" style="opacity:1;transform:none;margin:0 auto 2rem;display:table;">
+                <span>Trusted by 250+ Clients Worldwide</span>
+            </div>
+            <div class="about-stats">
+                <div class="about-stat" data-reveal>
+                    <span class="about-stat-num" data-count="250">0</span><span class="about-stat-plus">+</span>
+                    <span class="about-stat-label">Clients Worldwide</span>
+                </div>
+                <div class="about-stat-divider"></div>
+                <div class="about-stat" data-reveal>
+                    <span class="about-stat-num" data-count="300">0</span><span class="about-stat-plus">+</span>
+                    <span class="about-stat-label">Projects Delivered</span>
+                </div>
+                <div class="about-stat-divider"></div>
+                <div class="about-stat" data-reveal>
+                    <span class="about-stat-num" data-count="6">0</span><span class="about-stat-plus">+</span>
+                    <span class="about-stat-label">Years of Excellence</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about section" id="about">
+        <video class="about-bg-video" autoplay muted loop playsinline poster="poster.jpg">
+            <source src="https://dl.dropboxusercontent.com/scl/fi/f4aaw6v3wom0neomt729w/GettyImages-1139926612-1.mp4?rlkey=jmlm5exjzb8fe2vysvphm2de7&st=w1k2lzik" type="video/mp4">
+        </video>
+        <div class="container">
+            <!-- Top: centered intro -->
+            <div class="about-intro">
+                <span class="section-tag center" data-reveal>About</span>
+                <h2 class="about-title" data-reveal-lines>
+                    Born in Dubai.<br>Built for <em>Brands.</em>
+                </h2>
+                <p class="about-text" data-reveal>
+                    We blend cinematic storytelling with cutting-edge digital strategy to build
+                    brands that don't just exist online, they dominate. Every project is crafted
+                    with obsessive attention to detail and a relentless pursuit of excellence.
+                </p>
+            </div>
+
+            <!-- Feature cards -->
+            <div class="about-features">
+                <div class="about-feature" data-reveal>
+                    <div class="about-feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h3 class="about-feature-title">Strategy First</h3>
+                    <p class="about-feature-desc">Every project starts with deep research, brand positioning, and a roadmap built for measurable growth.</p>
+                </div>
+                <div class="about-feature" data-reveal>
+                    <div class="about-feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    </div>
+                    <h3 class="about-feature-title">Global Reach</h3>
+                    <p class="about-feature-desc">Based in Dubai, delivering for clients across the Middle East, Europe, and North America.</p>
+                </div>
+                <div class="about-feature" data-reveal>
+                    <div class="about-feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                    </div>
+                    <h3 class="about-feature-title">Full-Service</h3>
+                    <p class="about-feature-desc">Strategy, design, development, content production, and photography, all under one roof.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BUILT FOR EXPERTS -->
+    <section class="experts section" id="experts">
+        <div class="container">
+            <div class="experts-content">
+                <div class="experts-left">
+                    <span class="section-tag" data-reveal>What We Stand For</span>
+                    <h2 class="experts-title" data-reveal-lines>BUILT FOR EXPERTS WHO<br>REFUSE TO SETTLE.</h2>
+                    <p class="experts-desc" data-reveal>We help your brand stand out in crowded markets, build trust, and convert attention into revenue — all with a system designed for ambitious businesses.</p>
+                    <a href="#contact" class="btn btn-primary" data-magnetic>
+                        <span>Start Your Project</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><polygon points="22,2 15,22 11,13 2,9"/></svg>
+                    </a>
+                </div>
+                <div class="experts-right">
+                    <div class="experts-cards">
+                        <div class="expert-card" data-reveal>
+                            <div class="expert-card-media">
+                                <video muted loop playsinline autoplay>
+                                    <source src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_207cee48bc6541caa15a0e30786407da.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <span class="expert-card-label">Content Sprints</span>
+                        </div>
+                        <div class="expert-card" data-reveal>
+                            <div class="expert-card-media">
+                                <video muted loop playsinline autoplay>
+                                    <source src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_7f58416b488a4c779fd698d5a2c591d6.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <span class="expert-card-label">Demand Generation</span>
+                        </div>
+                        <div class="expert-card" data-reveal>
+                            <div class="expert-card-media">
+                                <img src="https://conceptsix.ae/wp-content/uploads/2025/10/freepik__a-sleek-digital-marketing-concept-modern-workspace__54560.webp" alt="Branded Presence" loading="lazy">
+                            </div>
+                            <span class="expert-card-label">Branded Presence</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW THE SYSTEM RUNS -->
+    <section class="system-runs section" id="system">
+        <div class="container">
+            <div class="system-runs-header" style="text-align:center;">
+                <span class="section-tag center" data-reveal>The System</span>
+                <h2 class="system-runs-title" data-reveal-lines>How The System Runs</h2>
+                <p class="system-runs-sub" data-reveal>A repeatable system designed to capture expertise, produce content, and generate demand.</p>
+            </div>
+            <div class="system-runs-grid">
+                <div class="system-card" data-reveal>
+                    <div class="system-card-num">01</div>
+                    <div class="system-card-media">
+                        <video muted loop playsinline autoplay>
+                            <source src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_207cee48bc6541caa15a0e30786407da.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <h3 class="system-card-title">Strategy</h3>
+                    <p class="system-card-desc">Positioning, content angles, and authority series designed to generate attention, trust, and inbound demand.</p>
+                </div>
+                <div class="system-card" data-reveal>
+                    <div class="system-card-num">02</div>
+                    <div class="system-card-media">
+                        <video muted loop playsinline autoplay>
+                            <source src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_7f58416b488a4c779fd698d5a2c591d6.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <h3 class="system-card-title">Capture</h3>
+                    <p class="system-card-desc">Structured filming sessions that transform expertise into 20–30 authority clips in a single session.</p>
+                </div>
+                <div class="system-card" data-reveal>
+                    <div class="system-card-num">03</div>
+                    <div class="system-card-media">
+                        <video muted loop playsinline autoplay>
+                            <source src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_d3bd3bac82c04b7691233d6f83fd4b0c.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <h3 class="system-card-title">Placement</h3>
+                    <p class="system-card-desc">Dedicated editing and publishing workflows that structure, refine, and distribute content consistently.</p>
+                </div>
+                <div class="system-card" data-reveal>
+                    <div class="system-card-num">04</div>
+                    <div class="system-card-media">
+                        <video muted loop playsinline autoplay>
+                            <source src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_1b0bbf4b0c5842178cee90f04976ee6a.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <h3 class="system-card-title">Oversight</h3>
+                    <p class="system-card-desc">Quality control, brand alignment, and performance insights that continuously improve the authority engine.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE CONCEPT SIX FRAMEWORK -->
+    <section class="framework section" id="framework">
+        <div class="framework-bg-glow"></div>
+        <div class="container">
+            <div class="framework-header">
+                <span class="framework-badge">6 Concepts. One Strategy.</span>
+                <h2 class="framework-title" data-reveal-lines>The Concept Six<br><em>Framework</em></h2>
+                <p class="framework-desc" data-reveal>We don't offer isolated services. We build a complete marketing ecosystem where every part works together — from strategy to sales.</p>
+            </div>
+            <div class="fw-split">
+                <div class="framework-accordion">
+                    <div class="fw-item active" data-fw-img="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_207cee48bc6541caa15a0e30786407da.mp4" data-reveal>
+                        <button class="fw-item-header">
+                            <span class="fw-item-num">01</span>
+                            <h3 class="fw-item-title">Strategy</h3>
+                            <span class="fw-item-toggle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+                        </button>
+                        <div class="fw-item-body">
+                            <p>Market insights, audience profiling, and funnel planning that guide every decision.</p>
+                        </div>
+                    </div>
+                    <div class="fw-item" data-fw-img="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_7f58416b488a4c779fd698d5a2c591d6.mp4" data-reveal>
+                        <button class="fw-item-header">
+                            <span class="fw-item-num">02</span>
+                            <h3 class="fw-item-title">Content</h3>
+                            <span class="fw-item-toggle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+                        </button>
+                        <div class="fw-item-body">
+                            <p>High-quality visuals, videos, and messaging designed to capture attention and build brand value.</p>
+                        </div>
+                    </div>
+                    <div class="fw-item" data-fw-img="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_d3bd3bac82c04b7691233d6f83fd4b0c.mp4" data-reveal>
+                        <button class="fw-item-header">
+                            <span class="fw-item-num">03</span>
+                            <h3 class="fw-item-title">Paid Media</h3>
+                            <span class="fw-item-toggle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+                        </button>
+                        <div class="fw-item-body">
+                            <p>Performance-driven campaigns across digital platforms that deliver measurable ROI at scale.</p>
+                        </div>
+                    </div>
+                    <div class="fw-item" data-fw-img="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_1b0bbf4b0c5842178cee90f04976ee6a.mp4" data-reveal>
+                        <button class="fw-item-header">
+                            <span class="fw-item-num">04</span>
+                            <h3 class="fw-item-title">Placement</h3>
+                            <span class="fw-item-toggle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+                        </button>
+                        <div class="fw-item-body">
+                            <p>Strategic distribution across channels where your ideal customers are active.</p>
+                        </div>
+                    </div>
+                    <div class="fw-item" data-fw-img="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_801c0dfaed5e464f8000742e0812b9e5.mp4" data-reveal>
+                        <button class="fw-item-header">
+                            <span class="fw-item-num">05</span>
+                            <h3 class="fw-item-title">Branded Presence</h3>
+                            <span class="fw-item-toggle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+                        </button>
+                        <div class="fw-item-body">
+                            <p>Consistent branding across every touchpoint that builds trust and loyalty.</p>
+                        </div>
+                    </div>
+                    <div class="fw-item" data-fw-img="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_7ebf3650b7a9484cb57c45c7d7089f55.mp4" data-reveal>
+                        <button class="fw-item-header">
+                            <span class="fw-item-num">06</span>
+                            <h3 class="fw-item-title">Oversight</h3>
+                            <span class="fw-item-toggle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+                        </button>
+                        <div class="fw-item-body">
+                            <p>Continuous performance monitoring that turns data into actionable growth strategies.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="fw-media">
+                    <div class="fw-media-inner">
+                        <video class="fw-media-video" muted loop playsinline autoplay>
+                            <source src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_207cee48bc6541caa15a0e30786407da.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services section" id="services">
+        <div class="container">
+            <div class="services-header">
+                <span class="section-tag" data-reveal>Services</span>
+                <h2 class="services-title" data-reveal-lines>What We Do</h2>
+                <p class="services-sub" data-reveal>Full-service solutions under one roof — from strategy to execution.</p>
+            </div>
+            <div class="svc-tabs" data-reveal>
+                <button class="svc-tab active" data-svc-tab="0">Branding & Creative</button>
+                <button class="svc-tab" data-svc-tab="1">Performance Marketing</button>
+                <button class="svc-tab" data-svc-tab="2">SEO</button>
+                <button class="svc-tab" data-svc-tab="3">Photography & Videography</button>
+                <button class="svc-tab" data-svc-tab="4">Web & E-Commerce</button>
+                <button class="svc-tab" data-svc-tab="5">Events & PR</button>
+            </div>
+            <div class="svc-panels">
+                <div class="svc-panel active" data-svc-panel="0">
+                    <div class="svc-panel-card">
+                        <span class="svc-panel-tag">Branding / Social Media</span>
+                        <h3 class="svc-panel-title">Branding & Creative</h3>
+                        <div class="svc-panel-media">
+                            <video muted loop playsinline autoplay>
+                                <source src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_207cee48bc6541caa15a0e30786407da.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="svc-panel-tags">
+                        <span>Logo & Branding</span><span>Brand Strategy</span><span>Creative Direction</span><span>Brand Guidelines</span>
+                    </div>
+                </div>
+                <div class="svc-panel" data-svc-panel="1">
+                    <div class="svc-panel-card">
+                        <span class="svc-panel-tag">Ads / Growth</span>
+                        <h3 class="svc-panel-title">Performance Marketing</h3>
+                        <div class="svc-panel-media">
+                            <video muted loop playsinline autoplay>
+                                <source src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_7f58416b488a4c779fd698d5a2c591d6.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="svc-panel-tags">
+                        <span>Google Ads & PPC</span><span>Meta & Social Ads</span><span>Email Marketing</span><span>Conversion Optimization</span>
+                    </div>
+                </div>
+                <div class="svc-panel" data-svc-panel="2">
+                    <div class="svc-panel-card">
+                        <span class="svc-panel-tag">Organic / Search</span>
+                        <h3 class="svc-panel-title">SEO</h3>
+                        <div class="svc-panel-media">
+                            <video muted loop playsinline autoplay>
+                                <source src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_d3bd3bac82c04b7691233d6f83fd4b0c.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="svc-panel-tags">
+                        <span>On-Page SEO</span><span>Technical SEO</span><span>SEO Backlinks</span><span>Content Marketing</span>
+                    </div>
+                </div>
+                <div class="svc-panel" data-svc-panel="3">
+                    <div class="svc-panel-card">
+                        <span class="svc-panel-tag">Production / Visual</span>
+                        <h3 class="svc-panel-title">Photography & Videography</h3>
+                        <div class="svc-panel-media">
+                            <video muted loop playsinline autoplay>
+                                <source src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_801c0dfaed5e464f8000742e0812b9e5.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="svc-panel-tags">
+                        <span>Video Production</span><span>Photography</span><span>Motion Graphics</span><span>Podcast Production</span>
+                    </div>
+                </div>
+                <div class="svc-panel" data-svc-panel="4">
+                    <div class="svc-panel-card">
+                        <span class="svc-panel-tag">Development / Digital</span>
+                        <h3 class="svc-panel-title">Web & E-Commerce</h3>
+                        <div class="svc-panel-media">
+                            <video muted loop playsinline autoplay>
+                                <source src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_01ec155335de4dd9ae2b5298ee93e149.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="svc-panel-tags">
+                        <span>WordPress & CMS</span><span>Shopify & E-Commerce</span><span>Custom Web Apps</span><span>Website Maintenance</span>
+                    </div>
+                </div>
+                <div class="svc-panel" data-svc-panel="5">
+                    <div class="svc-panel-card">
+                        <span class="svc-panel-tag">Events / Communications</span>
+                        <h3 class="svc-panel-title">Events & PR</h3>
+                        <div class="svc-panel-media">
+                            <video muted loop playsinline autoplay>
+                                <source src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_7ebf3650b7a9484cb57c45c7d7089f55.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="svc-panel-tags">
+                        <span>Event Management</span><span>Press Releases</span><span>Media Relations</span><span>Launch Campaigns</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- PORTFOLIO / WORK SECTION -->
+    <section class="work section" id="work">
+        <div class="container">
+            <div class="work-header">
+                <div class="work-header-left">
+                    <span class="section-tag" data-reveal>Selected Work</span>
+                    <h2 class="work-title" data-reveal-lines>Featured Projects</h2>
+                </div>
+                <p class="work-sub" data-reveal>A showcase of our best work across branding, content, and digital experiences.</p>
+            </div>
+            <div class="work-bento">
+                <div class="work-bento-card work-bento-large" data-reveal>
+                    <div class="work-bento-media">
+                        <video muted loop playsinline autoplay>
+                            <source src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_207cee48bc6541caa15a0e30786407da.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="work-bento-overlay">
+                        <span class="work-bento-tag">Strategy</span>
+                        <h3 class="work-bento-title">Brand Positioning & Content Strategy</h3>
+                        <p class="work-bento-desc">Positioning, content angles, and authority series designed to generate attention, trust, and inbound demand.</p>
+                        <a href="#contact" class="work-bento-link">Read More &rarr;</a>
+                    </div>
+                </div>
+                <div class="work-bento-card" data-reveal>
+                    <div class="work-bento-media">
+                        <video muted loop playsinline autoplay>
+                            <source src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_7f58416b488a4c779fd698d5a2c591d6.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="work-bento-overlay">
+                        <span class="work-bento-tag">Production</span>
+                        <h3 class="work-bento-title">Cinematic Capture</h3>
+                        <p class="work-bento-desc">Structured filming sessions that transform expertise into 20-30 authority clips.</p>
+                        <a href="#contact" class="work-bento-link">Read More &rarr;</a>
+                    </div>
+                </div>
+                <div class="work-bento-card" data-reveal>
+                    <div class="work-bento-media">
+                        <img src="https://conceptsix.ae/wp-content/uploads/2025/10/freepik__a-sleek-digital-marketing-concept-modern-workspace__54560.webp" alt="Placement" loading="lazy">
+                    </div>
+                    <div class="work-bento-overlay">
+                        <span class="work-bento-tag">Digital</span>
+                        <h3 class="work-bento-title">Content Placement</h3>
+                        <p class="work-bento-desc">Publishing workflows that structure, refine, and distribute content consistently.</p>
+                        <a href="#contact" class="work-bento-link">Read More &rarr;</a>
+                    </div>
+                </div>
+                <div class="work-bento-card work-bento-wide" data-reveal>
+                    <div class="work-bento-media">
+                        <video muted loop playsinline autoplay>
+                            <source src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_1b0bbf4b0c5842178cee90f04976ee6a.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="work-bento-overlay">
+                        <span class="work-bento-tag">Analytics</span>
+                        <h3 class="work-bento-title">Performance Oversight & Brand Alignment</h3>
+                        <p class="work-bento-desc">Quality control, brand alignment, and performance insights that continuously improve the authority engine.</p>
+                        <a href="#contact" class="work-bento-link">Read More &rarr;</a>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:2.5rem;" data-reveal>
+                <a href="#" class="btn btn-primary" data-magnetic>
+                    <span>View All Projects</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- BRANDS THAT TRUST US -->
+    <section class="brands-trust section">
+        <div class="container">
+            <div class="client-logos-slider-header">
+                <span class="framework-badge">50+ Partners</span>
+                <h3 class="client-logos-slider-title" data-reveal-lines>Brands That Trust Us</h3>
+            </div>
+            <div class="brands-marquee">
+                <div class="brands-marquee-track">
+                    <div class="brand-item"><img src="https://conceptsix.ae/wp-content/uploads/2025/06/Artboard-1-15-2.webp" alt="Client"></div>
+                    <div class="brand-item"><img src="https://conceptsix.ae/wp-content/uploads/2025/06/Artboard-1-18.webp" alt="Client"></div>
+                    <div class="brand-item"><img src="https://conceptsix.ae/wp-content/uploads/2025/06/Artboard-1-16.webp" alt="Client"></div>
+                    <div class="brand-item"><img src="https://conceptsix.ae/wp-content/uploads/2025/06/Artboard-1-17-1.webp" alt="Client"></div>
+                    <div class="brand-item"><img src="https://conceptsix.ae/wp-content/uploads/2025/06/Artboard-1-16-1.webp" alt="Client"></div>
+                    <div class="brand-item"><img src="https://conceptsix.ae/wp-content/uploads/2025/06/Artboard-1.webp" alt="Client"></div>
+                    <div class="brand-item"><img src="https://conceptsix.ae/wp-content/uploads/2025/06/Artboard-1-15.webp" alt="Client"></div>
+                    <div class="brand-item"><img src="https://conceptsix.ae/wp-content/uploads/2025/06/Artboard-1-17.webp" alt="Client"></div>
+                    <div class="brand-item"><img src="https://conceptsix.ae/wp-content/uploads/2025/06/Artboard-1-13.webp" alt="Client"></div>
+                    <div class="brand-item"><img src="https://conceptsix.ae/wp-content/uploads/2025/06/Artboard-1-14-2.webp" alt="Client"></div>
+                    <div class="brand-item"><img src="https://conceptsix.ae/wp-content/uploads/2025/06/Artboard-1-14-1.webp" alt="Client"></div>
+                    <div class="brand-item"><img src="https://conceptsix.ae/wp-content/uploads/2025/06/Artboard-1-15-1.webp" alt="Client"></div>
+                    <!-- Duplicate for seamless loop -->
+                    <div class="brand-item"><img src="https://conceptsix.ae/wp-content/uploads/2025/06/Artboard-1-15-2.webp" alt="Client"></div>
+                    <div class="brand-item"><img src="https://conceptsix.ae/wp-content/uploads/2025/06/Artboard-1-18.webp" alt="Client"></div>
+                    <div class="brand-item"><img src="https://conceptsix.ae/wp-content/uploads/2025/06/Artboard-1-16.webp" alt="Client"></div>
+                    <div class="brand-item"><img src="https://conceptsix.ae/wp-content/uploads/2025/06/Artboard-1-17-1.webp" alt="Client"></div>
+                    <div class="brand-item"><img src="https://conceptsix.ae/wp-content/uploads/2025/06/Artboard-1-16-1.webp" alt="Client"></div>
+                    <div class="brand-item"><img src="https://conceptsix.ae/wp-content/uploads/2025/06/Artboard-1.webp" alt="Client"></div>
+                    <div class="brand-item"><img src="https://conceptsix.ae/wp-content/uploads/2025/06/Artboard-1-15.webp" alt="Client"></div>
+                    <div class="brand-item"><img src="https://conceptsix.ae/wp-content/uploads/2025/06/Artboard-1-17.webp" alt="Client"></div>
+                    <div class="brand-item"><img src="https://conceptsix.ae/wp-content/uploads/2025/06/Artboard-1-13.webp" alt="Client"></div>
+                    <div class="brand-item"><img src="https://conceptsix.ae/wp-content/uploads/2025/06/Artboard-1-14-2.webp" alt="Client"></div>
+                    <div class="brand-item"><img src="https://conceptsix.ae/wp-content/uploads/2025/06/Artboard-1-14-1.webp" alt="Client"></div>
+                    <div class="brand-item"><img src="https://conceptsix.ae/wp-content/uploads/2025/06/Artboard-1-15-1.webp" alt="Client"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="case-studies section" id="testimonials">
+        <div class="container">
+            <div class="case-studies-header" style="text-align:center;">
+                <span class="section-tag center" data-reveal>Case Studies</span>
+                <h2 class="case-studies-title" data-reveal-lines>Our Success Stories</h2>
+                <p class="case-studies-sub" data-reveal>We deliver real results for real brands, from concept to proven growth.</p>
+            </div>
+        </div>
+        <div class="swiper case-swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="case-card">
+                        <div class="case-card-media">
+                            <video muted loop playsinline autoplay>
+                                <source src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_207cee48bc6541caa15a0e30786407da.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="case-card-content">
+                            <span class="case-card-tag">Strategy</span>
+                            <h3 class="case-card-name">Heritage Group</h3>
+                            <p class="case-card-desc">Complete digital transformation resulting in 340% increase in conversions within the first quarter.</p>
+                            <div class="case-card-stats">
+                                <div class="case-stat"><span class="case-stat-num">340%</span><span class="case-stat-label">Conversions</span></div>
+                                <div class="case-stat"><span class="case-stat-num">5x</span><span class="case-stat-label">Engagement</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="case-card">
+                        <div class="case-card-media">
+                            <video muted loop playsinline autoplay>
+                                <source src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_7f58416b488a4c779fd698d5a2c591d6.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="case-card-content">
+                            <span class="case-card-tag">Production</span>
+                            <h3 class="case-card-name">Luxe Interiors</h3>
+                            <p class="case-card-desc">World-class photoshoot quality that rivaled international agencies at a fraction of the cost.</p>
+                            <div class="case-card-stats">
+                                <div class="case-stat"><span class="case-stat-num">200+</span><span class="case-stat-label">Assets</span></div>
+                                <div class="case-stat"><span class="case-stat-num">3x</span><span class="case-stat-label">ROI</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="case-card">
+                        <div class="case-card-media">
+                            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80" alt="Skyline Ventures" loading="lazy">
+                        </div>
+                        <div class="case-card-content">
+                            <span class="case-card-tag">Digital</span>
+                            <h3 class="case-card-name">Skyline Ventures</h3>
+                            <p class="case-card-desc">Social media engagement grew 5x and the brand is now recognized across the entire GCC region.</p>
+                            <div class="case-card-stats">
+                                <div class="case-stat"><span class="case-stat-num">5x</span><span class="case-stat-label">Social Growth</span></div>
+                                <div class="case-stat"><span class="case-stat-num">GCC</span><span class="case-stat-label">Reach</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="case-card">
+                        <div class="case-card-media">
+                            <video muted loop playsinline autoplay>
+                                <source src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_1b0bbf4b0c5842178cee90f04976ee6a.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="case-card-content">
+                            <span class="case-card-tag">Branding</span>
+                            <h3 class="case-card-name">Al Kaabi Real Estate</h3>
+                            <p class="case-card-desc">Full brand overhaul and digital presence that positioned them as market leaders in Dubai.</p>
+                            <div class="case-card-stats">
+                                <div class="case-stat"><span class="case-stat-num">150%</span><span class="case-stat-label">Traffic</span></div>
+                                <div class="case-stat"><span class="case-stat-num">4.8★</span><span class="case-stat-label">Rating</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="case-nav">
+                <button class="case-btn case-btn--prev" aria-label="Previous">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+                </button>
+                <div class="case-pagination"></div>
+                <button class="case-btn case-btn--next" aria-label="Next">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIAL SLIDER -->
+    <section class="testimonial-reels section" id="testimonial-reels">
+        <div class="container">
+            <div class="testi-header" style="text-align:center;display:block;margin-bottom:2.5rem;">
+                <span class="section-tag center" data-reveal>Hear From Our Clients</span>
+                <h2 class="testi-title" data-reveal-lines>Real Stories. Real Results.</h2>
+            </div>
+            <div class="swiper testi-swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="testi-card">
+                        <div class="testi-card-media">
+                            <video muted loop playsinline autoplay>
+                                <source src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_207cee48bc6541caa15a0e30786407da.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <button class="testi-card-play" aria-label="Play">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+                        </button>
+                        <div class="testi-card-info">
+                            <h3 class="testi-card-name">Sarah Ahmed</h3>
+                            <span class="testi-card-role">CEO, Heritage Group</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="testi-card">
+                        <div class="testi-card-media">
+                            <video muted loop playsinline autoplay>
+                                <source src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_7f58416b488a4c779fd698d5a2c591d6.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <button class="testi-card-play" aria-label="Play">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+                        </button>
+                        <div class="testi-card-info">
+                            <h3 class="testi-card-name">Omar Khalid</h3>
+                            <span class="testi-card-role">Founder, Luxe Interiors</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="testi-card">
+                        <div class="testi-card-media">
+                            <video muted loop playsinline autoplay>
+                                <source src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_1b0bbf4b0c5842178cee90f04976ee6a.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <button class="testi-card-play" aria-label="Play">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+                        </button>
+                        <div class="testi-card-info">
+                            <h3 class="testi-card-name">Fatima Al Kaabi</h3>
+                            <span class="testi-card-role">Director, Al Kaabi Real Estate</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="testi-card">
+                        <div class="testi-card-media">
+                            <video muted loop playsinline autoplay>
+                                <source src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_d3bd3bac82c04b7691233d6f83fd4b0c.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <button class="testi-card-play" aria-label="Play">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+                        </button>
+                        <div class="testi-card-info">
+                            <h3 class="testi-card-name">Ahmed Rashid</h3>
+                            <span class="testi-card-role">COO, Skyline Ventures</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="testi-card">
+                        <div class="testi-card-media">
+                            <video muted loop playsinline autoplay>
+                                <source src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_7ebf3650b7a9484cb57c45c7d7089f55.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <button class="testi-card-play" aria-label="Play">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+                        </button>
+                        <div class="testi-card-info">
+                            <h3 class="testi-card-name">Layla Hassan</h3>
+                            <span class="testi-card-role">CMO, Gulf Properties</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="testi-card">
+                        <div class="testi-card-media">
+                            <video muted loop playsinline autoplay>
+                                <source src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_801c0dfaed5e464f8000742e0812b9e5.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <button class="testi-card-play" aria-label="Play">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+                        </button>
+                        <div class="testi-card-info">
+                            <h3 class="testi-card-name">Khalid Al Mansouri</h3>
+                            <span class="testi-card-role">Founder, Dune Capital</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="testi-card">
+                        <div class="testi-card-media">
+                            <video muted loop playsinline autoplay>
+                                <source src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_01ec155335de4dd9ae2b5298ee93e149.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <button class="testi-card-play" aria-label="Play">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+                        </button>
+                        <div class="testi-card-info">
+                            <h3 class="testi-card-name">Nadia Youssef</h3>
+                            <span class="testi-card-role">Director, Bloom Agency</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="testi-card">
+                        <div class="testi-card-media">
+                            <video muted loop playsinline autoplay>
+                                <source src="https://245974602.fs1.hubspotusercontent-na2.net/hubfs/245974602/conceptsix.ae_207cee48bc6541caa15a0e30786407da.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <button class="testi-card-play" aria-label="Play">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+                        </button>
+                        <div class="testi-card-info">
+                            <h3 class="testi-card-name">Tariq Al Dhaheri</h3>
+                            <span class="testi-card-role">CEO, Vista Developments</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testi-nav">
+                <button class="testi-btn testi-btn--prev" aria-label="Previous">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+                </button>
+                <div class="testi-pagination"></div>
+                <button class="testi-btn testi-btn--next" aria-label="Next">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESOURCES SECTION -->
+    <section class="c42-resources section" id="resources">
+        <div class="container">
+            <span class="section-tag center" data-reveal>Resources</span>
+            <h2 class="c42-title" data-reveal-lines>Latest Insights</h2>
+        </div>
+        <div class="swiper c42-swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="c42-card">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80" alt="Digital Strategy Blog">
+                        <div class="c42-text">
+                            <h3>Digital Strategy for 2026</h3>
+                            <p>How to build a digital strategy that drives growth, visibility, and engagement in the modern landscape.</p>
+                        </div>
+                        <div class="swipe-arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 54 54" fill="none">
+                                <circle cx="27" cy="27" r="27" fill="#FFD100"/>
+                                <path d="M22 17l10 10-10 10" stroke="#0d0d0d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="c42-card">
+                        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&q=80" alt="Brand Identity Blog">
+                        <div class="c42-text">
+                            <h3>The Power of Brand Identity</h3>
+                            <p>Why a strong brand identity is the foundation of every successful business in the UAE market.</p>
+                        </div>
+                        <div class="swipe-arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 54 54" fill="none">
+                                <circle cx="27" cy="27" r="27" fill="#FFD100"/>
+                                <path d="M22 17l10 10-10 10" stroke="#0d0d0d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="c42-card">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80" alt="Content Strategy Blog">
+                        <div class="c42-text">
+                            <h3>Content That Converts</h3>
+                            <p>From cinematic video to social media clips, learn how content production drives measurable ROI.</p>
+                        </div>
+                        <div class="swipe-arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 54 54" fill="none">
+                                <circle cx="27" cy="27" r="27" fill="#FFD100"/>
+                                <path d="M22 17l10 10-10 10" stroke="#0d0d0d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="c42-card">
+                        <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&q=80" alt="SEO Blog">
+                        <div class="c42-text">
+                            <h3>SEO Trends You Can't Ignore</h3>
+                            <p>The latest search engine optimization strategies that top Dubai agencies use to dominate rankings.</p>
+                        </div>
+                        <div class="swipe-arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 54 54" fill="none">
+                                <circle cx="27" cy="27" r="27" fill="#FFD100"/>
+                                <path d="M22 17l10 10-10 10" stroke="#0d0d0d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="c42-card">
+                        <img src="https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=800&q=80" alt="Social Media Blog">
+                        <div class="c42-text">
+                            <h3>Social Media Mastery</h3>
+                            <p>Build communities, drive engagement, and convert followers into loyal customers across every platform.</p>
+                        </div>
+                        <div class="swipe-arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 54 54" fill="none">
+                                <circle cx="27" cy="27" r="27" fill="#FFD100"/>
+                                <path d="M22 17l10 10-10 10" stroke="#0d0d0d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="c42-card">
+                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80" alt="Web Development Blog">
+                        <div class="c42-text">
+                            <h3>Web Development Best Practices</h3>
+                            <p>Building fast, accessible, and conversion-focused websites that scale with your business.</p>
+                        </div>
+                        <div class="swipe-arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 54 54" fill="none">
+                                <circle cx="27" cy="27" r="27" fill="#FFD100"/>
+                                <path d="M22 17l10 10-10 10" stroke="#0d0d0d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="c42-card">
+                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80" alt="Photography Blog">
+                        <div class="c42-text">
+                            <h3>Visual Storytelling in 2026</h3>
+                            <p>How professional photography and videography elevate your brand above the competition.</p>
+                        </div>
+                        <div class="swipe-arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 54 54" fill="none">
+                                <circle cx="27" cy="27" r="27" fill="#FFD100"/>
+                                <path d="M22 17l10 10-10 10" stroke="#0d0d0d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="c42-nav">
+            <button class="c42-btn c42-btn--prev" aria-label="Previous slide">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <div class="c42-pagination"></div>
+            <button class="c42-btn c42-btn--next" aria-label="Next slide">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact section" id="contact">
+        <div class="container">
+            <div class="contact-split">
+                <div class="contact-info-col" data-reveal>
+                    <h2 class="contact-card-title">Got a Project in Mind?</h2>
+                    <p class="contact-card-desc">You've built real expertise. You just need a system that shows it to the right people, and turns their attention into revenue.</p>
+                    <div class="contact-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.178509161498!2d55.2194!3d25.2048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43348a67e24b%3A0xff45e502e1ceb7e2!2sSheikh%20Zayed%20Rd%20-%20Dubai!5e0!3m2!1sen!2sae!4v1700000000000!5m2!1sen!2sae" width="100%" height="250" style="border:0;border-radius:16px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                <div class="contact-form-col" data-reveal>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" name="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder="Your Email" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <div class="phone-input-wrapper">
+                                    <select name="country_code" class="country-code-select">
+                                        <option value="+971">🇦🇪 +971</option>
+                                        <option value="+966">🇸🇦 +966</option>
+                                        <option value="+968">🇴🇲 +968</option>
+                                        <option value="+974">🇶🇦 +974</option>
+                                        <option value="+973">🇧🇭 +973</option>
+                                        <option value="+965">🇰🇼 +965</option>
+                                        <option value="+91">🇮🇳 +91</option>
+                                        <option value="+44">🇬🇧 +44</option>
+                                        <option value="+1">🇺🇸 +1</option>
+                                    </select>
+                                    <input type="tel" name="phone" placeholder="Phone Number">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <select name="service" required>
+                                    <option value="" disabled selected>Select Service</option>
+                                    <option value="web">Web Development</option>
+                                    <option value="branding">Brand Strategy</option>
+                                    <option value="content">Content Production</option>
+                                    <option value="photography">Photography</option>
+                                    <option value="social">Social Media</option>
+                                    <option value="marketing">Digital Marketing</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Tell us about your project..." rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full" data-magnetic>
+                            <span>Send Message</span>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><polygon points="22,2 15,22 11,13 2,9"/></svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#" class="footer-logo"><img src="https://conceptsix.ae/wp-content/uploads/2025/06/cs-yello-512.svg" alt="ConceptSix" class="footer-logo-img"></a>
+                    <p class="footer-desc">We're the strategic partners who transform ambitious brands into market leaders through data-driven digital marketing, viral social campaigns with results that matter.</p>
+                    <div class="footer-socials">
+                        <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                        </a>
+                        <a href="https://tiktok.com" target="_blank" rel="noopener" aria-label="TikTok">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.51a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.43V13a8.16 8.16 0 005.58 2.17V11.7a4.85 4.85 0 01-3.59-1.42V6.69h3.59z"/></svg>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <a href="#hero" class="footer-link">Home</a>
+                    <a href="#about" class="footer-link">About Us</a>
+                    <a href="#work" class="footer-link">Case Studies</a>
+                    <a href="#" class="footer-link">Careers</a>
+                    <a href="#contact" class="footer-link">Contact Us</a>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <a href="#services" class="footer-link">Instagram Marketing</a>
+                    <a href="#services" class="footer-link">Content Marketing</a>
+                    <a href="#services" class="footer-link">Search Engine Optimization</a>
+                    <a href="#services" class="footer-link">SEO Backlinks</a>
+                    <a href="#services" class="footer-link">Reputation Management</a>
+                </div>
+                <div class="footer-col footer-contact-info">
+                    <h4 class="footer-heading">Contact Info</h4>
+                    <div class="footer-contact-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                        <a href="tel:+97145490355">+971 4 549 0355</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)" stroke="none"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+                        <a href="https://wa.me/971543487679" target="_blank" rel="noopener">+971 543 487 679</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <a href="mailto:info@Conceptsix.ae">info@Conceptsix.ae</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span>RAG Biz HQ – Office M10 Sheikh Zayed Rd, Dubai, UAE</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>Copyright &copy; 2026 Concept Six Accelerating Growth in the Middle East.</span>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms and Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot Widget -->
+    <div class="chatbot-widget" id="chatbotWidget">
+        <button class="chatbot-toggle" id="chatbotToggle" aria-label="Open chat">
+            <svg class="chatbot-icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            <svg class="chatbot-icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+        <div class="chatbot-window" id="chatbotWindow">
+            <iframe src="https://meeting-chat-bot.vercel.app/" title="Chat with us" allow="microphone"></iframe>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+    // Resources Swiper
+    document.addEventListener("DOMContentLoaded", function() {
+        // Case Studies Swiper
+        new Swiper(".case-swiper", {
+            slidesPerView: 1.15,
+            centeredSlides: false,
+            spaceBetween: 24,
+            speed: 700,
+            grabCursor: true,
+            pagination: {
+                el: ".case-pagination",
+                clickable: true
+            },
+            navigation: {
+                prevEl: ".case-btn--prev",
+                nextEl: ".case-btn--next"
+            },
+            breakpoints: {
+                768: { slidesPerView: 1.4 },
+                1024: { slidesPerView: 1.8 }
+            }
+        });
+
+        // Resources Swiper
+        const resourceSwiper = new Swiper(".c42-swiper", {
+            effect: "coverflow",
+            centeredSlides: true,
+            slidesPerView: "auto",
+            speed: 900,
+            initialSlide: 2,
+            grabCursor: true,
+            loop: true,
+            coverflowEffect: {
+                rotate: 0,
+                depth: 280,
+                modifier: 1,
+                slideShadows: false
+            },
+            pagination: {
+                el: ".c42-pagination",
+                clickable: true
+            },
+            navigation: {
+                prevEl: ".c42-btn--prev",
+                nextEl: ".c42-btn--next"
+            }
+        });
+        // Services Tabs
+        document.querySelectorAll('.svc-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                const idx = tab.getAttribute('data-svc-tab');
+                document.querySelectorAll('.svc-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.svc-panel').forEach(p => p.classList.remove('active'));
+                tab.classList.add('active');
+                const panel = document.querySelector('[data-svc-panel="' + idx + '"]');
+                if (panel) panel.classList.add('active');
+            });
+        });
+
+        // Framework Accordion + Media Swap
+        document.querySelectorAll('.fw-item-header').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const wasActive = item.classList.contains('active');
+                document.querySelectorAll('.fw-item').forEach(i => i.classList.remove('active'));
+                if (!wasActive) {
+                    item.classList.add('active');
+                    const src = item.getAttribute('data-fw-img');
+                    const video = document.querySelector('.fw-media-video');
+                    if (video && src) {
+                        video.src = src;
+                        video.load();
+                        video.play().catch(() => {});
+                    }
+                }
+            });
+        });
+
+        // Testimonial Swiper
+        new Swiper(".testi-swiper", {
+            slidesPerView: 2,
+            centeredSlides: true,
+            spaceBetween: 12,
+            speed: 700,
+            grabCursor: true,
+            loop: true,
+            pagination: {
+                el: ".testi-pagination",
+                clickable: true
+            },
+            navigation: {
+                prevEl: ".testi-btn--prev",
+                nextEl: ".testi-btn--next"
+            },
+            breakpoints: {
+                640: { slidesPerView: 3, spaceBetween: 12 },
+                768: { slidesPerView: 4, spaceBetween: 14 },
+                1024: { slidesPerView: 5, spaceBetween: 16 }
+            }
+        });
+    });
+    </script>
+</body>
+</html>
