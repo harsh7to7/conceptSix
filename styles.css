@@ -1723,6 +1723,7 @@ input, textarea, select {
     font-size: clamp(2.2rem, 4.5vw, 4rem);
     font-weight: 800;
     color: var(--white);
+    line-height: 1.05;
 }
 
 .work-sub {
