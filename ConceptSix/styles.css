@@ -1368,10 +1368,23 @@ input, textarea, select {
     margin-bottom: 3.5rem;
 }
 
+.standfor-pill {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 100px;
+    padding: 0.5rem 1.5rem;
+    margin-bottom: 1.2rem;
+}
+
 .standfor-title {
     font-family: var(--font-display);
     text-transform: uppercase;
-    font-size: clamp(2rem, 4.5vw, 3.5rem);
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
     font-weight: 900;
     color: var(--white);
     line-height: 1.05;
@@ -1380,128 +1393,184 @@ input, textarea, select {
 }
 
 .standfor-sub {
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: var(--text);
-    max-width: 500px;
+    max-width: 460px;
     margin: 0 auto;
+    line-height: 1.6;
 }
 
 .standfor-grid {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
 }
 
-.standfor-card--row {
+/* Row cards (image + pink side by side) */
+.standfor-row {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    min-height: 280px;
+    gap: 14px;
+    min-height: 300px;
 }
 
-.standfor-card-img {
-    border-radius: 16px;
+.standfor-row--branded {
+    grid-template-columns: 55% 1fr;
+}
+
+.standfor-row--demand {
+    grid-template-columns: 28% 1fr;
+}
+
+.standfor-img {
+    border-radius: 14px;
     overflow: hidden;
-    min-height: 280px;
     position: relative;
+    min-height: 300px;
 }
 
-.standfor-card-img--small {
-    min-height: 260px;
+.standfor-img--tall {
+    min-height: 300px;
 }
 
-.standfor-card-body--pink {
+/* Pink content cards */
+.standfor-pink {
     background: #f5e6ff;
-    border-radius: 16px;
-    padding: 2.5rem;
+    border-radius: 14px;
+    padding: 2.2rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.standfor-card-body--pink .standfor-card-title {
-    color: #1a1a1a;
-    font-family: var(--font-display);
-    font-size: 1.8rem;
-    font-weight: 800;
-    margin-bottom: 0.6rem;
-}
-
-.standfor-card-body--pink .standfor-card-desc {
-    color: #4a4a4a;
-    font-size: 0.95rem;
-    line-height: 1.6;
-}
-
-.standfor-card-icon {
-    width: 44px;
-    height: 44px;
+.standfor-icon {
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
     background: rgba(168, 85, 247, 0.15);
     display: flex;
     align-items: center;
     justify-content: center;
     color: #A855F7;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.5rem;
 }
 
-.standfor-card--wide {
+.standfor-icon-text {
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #A855F7;
+}
+
+.standfor-pink-title {
+    color: #1a1a1a;
+    font-family: var(--font-display);
+    font-size: 1.7rem;
+    font-weight: 800;
+    margin-bottom: 0.6rem;
+    line-height: 1.15;
+}
+
+.standfor-pink-desc {
+    color: #4a4a4a;
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+
+/* Wide card (Content Sprints) */
+.standfor-wide {
+    background: #f5e6ff;
+    border-radius: 14px;
+    padding: 2.2rem 2.5rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 2.5rem;
-    gap: 2rem;
-    min-height: 260px;
-    border-radius: 16px;
+    gap: 1.5rem;
+    min-height: 280px;
+    position: relative;
 }
 
-.standfor-card-photos {
+.standfor-wide-text {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+/* Stacked photos */
+.standfor-photos {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    min-height: 200px;
 }
 
 .standfor-photo {
-    width: 180px;
-    height: 120px;
-    border-radius: 12px;
+    border-radius: 10px;
     overflow: hidden;
-}
-
-.standfor-photo--offset {
-    margin-right: 30px;
-}
-
-.standfor-views-badge {
     position: absolute;
-    bottom: 12px;
-    left: 12px;
+}
+
+.standfor-photo--top {
+    width: 200px;
+    height: 140px;
+    top: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.standfor-photo--bottom {
+    width: 180px;
+    height: 140px;
+    bottom: 0;
+    right: 40px;
+    z-index: 1;
+}
+
+/* Views badge */
+.standfor-badge {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
     background: rgba(0, 0, 0, 0.7);
-    color: white;
+    color: #fff;
     padding: 4px 10px;
     border-radius: 6px;
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     font-weight: 600;
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 4px;
+    gap: 5px;
+    backdrop-filter: blur(4px);
 }
 
-/* Light theme override */
-[data-theme="light"] .standfor-card-body--pink {
+.standfor-badge svg {
+    opacity: 0.8;
+}
+
+/* Light theme */
+[data-theme="light"] .standfor-pink,
+[data-theme="light"] .standfor-wide {
     background: #f5e6ff;
+}
+
+[data-theme="light"] .standfor-pill {
+    border-color: rgba(0, 0, 0, 0.15);
+    color: #1a1a1a;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-    .standfor-card--row {
+    .standfor-row--branded,
+    .standfor-row--demand {
         grid-template-columns: 1fr;
     }
-    .standfor-card--wide {
+    .standfor-wide {
         grid-template-columns: 1fr;
     }
-    .standfor-card-img {
-        min-height: 200px;
+    .standfor-img {
+        min-height: 220px;
     }
-    .standfor-card-photos {
-        align-items: center;
+    .standfor-photos {
+        min-height: 260px;
     }
     .standfor-header {
         margin-bottom: 2.5rem;
