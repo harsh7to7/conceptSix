@@ -3718,7 +3718,7 @@ input, textarea, select {
 
 .brands-marquee-track {
     display: flex;
-    gap: 0;
+    gap: 2rem;
     align-items: center;
     animation: brands-scroll 25s linear infinite;
     width: max-content;
@@ -3779,7 +3779,7 @@ input, textarea, select {
         padding: 8px;
     }
     .brands-marquee-track {
-        gap: 0;
+        gap: 1.25rem;
     }
 }
 
