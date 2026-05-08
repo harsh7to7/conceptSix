@@ -1441,10 +1441,10 @@ input, textarea, select {
 }
 
 .svc-tab.active {
-    color: var(--white);
+    color: #1a1a1a;
     background: var(--accent);
     border-color: var(--accent);
-    box-shadow: 0 4px 20px rgba(168, 85, 247, 0.4);
+    box-shadow: 0 4px 20px var(--accent-glow);
 }
 
 .svc-panels {
