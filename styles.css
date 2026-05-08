@@ -2313,6 +2313,7 @@ input, textarea, select {
 .brands-trust {
     background: linear-gradient(180deg, rgba(168, 85, 247, 0.03) 0%, rgba(168, 85, 247, 0.12) 50%, rgba(168, 85, 247, 0.03) 100%);
     overflow: hidden;
+    padding-bottom: 8rem;
 }
 
 /* Client Logos Slider */
@@ -3721,19 +3722,33 @@ input, textarea, select {
 }
 
 /* ---- BRANDS MARQUEE ---- */
+/* Tilted marquee wrapper */
+.brands-tilt-wrapper {
+    transform: rotate(-4deg);
+    margin: 2rem -5%;
+    width: 110%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
 .brands-marquee {
     overflow: hidden;
     position: relative;
-    mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
 }
 
 .brands-marquee-track {
     display: flex;
-    gap: 4rem;
+    gap: 2rem;
     align-items: center;
-    animation: brands-scroll 30s linear infinite;
+    animation: brands-scroll 25s linear infinite;
     width: max-content;
+}
+
+.brands-marquee-track--reverse {
+    animation: brands-scroll-reverse 28s linear infinite;
 }
 
 @keyframes brands-scroll {
@@ -3741,19 +3756,54 @@ input, textarea, select {
     100% { transform: translateX(-50%); }
 }
 
+@keyframes brands-scroll-reverse {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+}
+
 .brand-item {
     flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.4s ease;
+}
+
+.brand-item:hover {
+    transform: scale(1.12) rotate(4deg);
+    filter: brightness(1.1);
 }
 
 .brand-item img {
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     object-fit: contain;
-    background: #fff;
-    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    border: 1px solid rgba(168, 85, 247, 0.1);
+    padding: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+    .brands-tilt-wrapper {
+        transform: rotate(-3deg);
+        margin: 1rem -8%;
+        width: 116%;
+        gap: 1rem;
+    }
+    .brands-trust {
+        padding-bottom: 5rem;
+    }
+    .brand-item img {
+        width: 80px;
+        height: 80px;
+        border-radius: 12px;
+        padding: 8px;
+    }
+    .brands-marquee-track {
+        gap: 1rem;
+    }
 }
 
 /* ---- TESTIMONIAL SLIDER ---- */
