@@ -1412,62 +1412,39 @@ input, textarea, select {
 /* Services Tabs */
 .svc-tabs {
     display: flex;
-    gap: 0;
+    gap: 0.75rem;
     justify-content: center;
     flex-wrap: wrap;
     margin-bottom: 3rem;
-    border-bottom: 1px solid var(--border);
     padding-bottom: 0;
 }
 
 .svc-tab {
-    background: none;
-    border: none;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
     font-family: var(--font-body);
     font-size: 0.9rem;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--text-dim);
-    padding: 1rem 1.5rem;
+    padding: 0.75rem 1.5rem;
     cursor: pointer;
     position: relative;
-    transition: color 0.3s;
+    transition: all 0.3s var(--ease-out);
     white-space: nowrap;
-}
-
-.svc-tab::after {
-    content: '';
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: var(--accent);
-    transform: scaleX(0);
-    transition: transform 0.3s var(--ease-out);
+    border-radius: 50px;
 }
 
 .svc-tab:hover {
-    color: var(--text-bright);
+    color: var(--white);
+    background: rgba(168, 85, 247, 0.15);
+    border-color: rgba(168, 85, 247, 0.4);
 }
 
 .svc-tab.active {
-    color: var(--accent);
-}
-
-.svc-tab.active::before {
-    content: '';
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
+    color: var(--white);
     background: var(--accent);
-    position: absolute;
-    left: 0.5rem;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.svc-tab.active::after {
-    transform: scaleX(1);
+    border-color: var(--accent);
+    box-shadow: 0 4px 20px rgba(168, 85, 247, 0.4);
 }
 
 .svc-panels {
@@ -1571,7 +1548,7 @@ input, textarea, select {
         scrollbar-width: none;
     }
     .svc-tabs::-webkit-scrollbar { display: none; }
-    .svc-tab { font-size: 0.8rem; padding: 0.75rem 1rem; }
+    .svc-tab { font-size: 0.8rem; padding: 0.6rem 1rem; }
 }
 
 /* ---- SHOWREEL ---- */
