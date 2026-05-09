@@ -202,17 +202,17 @@
 }
 
 [data-theme="light"] .contact {
-    background: linear-gradient(180deg, #f5f5f0 0%, #1a1a1a 70%, #0d0d0d 100%);
+    background: #fff;
 }
 
 [data-theme="light"] .footer {
-    background: #0d0d0d;
-    color: #b0ada6;
+    background: #fff;
+    color: #555;
 }
 
 [data-theme="light"] .footer .footer-title,
 [data-theme="light"] .footer .footer-logo-text {
-    color: #ffffff;
+    color: #111;
 }
 
 [data-theme="light"] .btn-primary {
@@ -2659,13 +2659,13 @@ input, textarea, select {
 }
 
 [data-theme="light"] .contact {
-    color: #fff;
+    color: #111;
 }
 
 [data-theme="light"] .contact .contact-card-desc,
 [data-theme="light"] .contact .contact-detail-item a,
 [data-theme="light"] .contact .contact-detail-item {
-    color: rgba(255, 255, 255, 0.8);
+    color: #555;
 }
 
 [data-theme="light"] .contact .contact-detail-item svg {
@@ -2673,9 +2673,8 @@ input, textarea, select {
 }
 
 [data-theme="light"] .contact-form-col .contact-form {
-    background: rgba(255, 255, 255, 0.08);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px);
+    background: #f5f5f0;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
 }
 
 @media (max-width: 768px) {
@@ -2789,7 +2788,7 @@ input, textarea, select {
 }
 
 [data-theme="light"] .footer {
-    background: #1a1a1a;
+    background: #fff;
 }
 
 [data-theme="light"] .footer,
@@ -2800,11 +2799,11 @@ input, textarea, select {
 [data-theme="light"] .footer-contact-item a,
 [data-theme="light"] .footer-contact-item span,
 [data-theme="light"] .footer-bottom-links a {
-    color: rgba(255, 255, 255, 0.5);
+    color: #666;
 }
 
 [data-theme="light"] .footer-heading {
-    color: #fff;
+    color: #111;
 }
 
 [data-theme="light"] .footer-link:hover,
