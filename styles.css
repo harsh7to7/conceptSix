@@ -3138,7 +3138,9 @@ input, textarea, select {
 .sf-header {
     text-align: center;
     margin-bottom: 3rem;
+    position: relative;
 }
+
 
 .sf-pill {
     display: inline-block;
@@ -3202,7 +3204,7 @@ input, textarea, select {
 }
 
 .sf-card__body {
-    background: #fff8e1;
+    background: #7C3AED;
     border-radius: 16px;
     padding: 2rem 2.2rem;
     display: flex;
@@ -3214,11 +3216,11 @@ input, textarea, select {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: rgba(255, 209, 0, 0.18);
+    background: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #b89b00;
+    color: #7C3AED;
     margin-bottom: 1.8rem;
     flex-shrink: 0;
 }
@@ -3227,11 +3229,11 @@ input, textarea, select {
     font-family: var(--font-display);
     font-size: 0.75rem;
     font-weight: 700;
-    color: #b89b00;
+    color: #7C3AED;
 }
 
 .sf-card__title {
-    color: #111;
+    color: #fff;
     font-family: var(--font-display);
     font-size: 1.55rem;
     font-weight: 800;
@@ -3240,14 +3242,14 @@ input, textarea, select {
 }
 
 .sf-card__desc {
-    color: #555;
+    color: rgba(255, 255, 255, 0.7);
     font-size: 0.88rem;
     line-height: 1.55;
 }
 
-/* Row 2: Content Sprints (full-width pink) */
+/* Row 2: Content Sprints (full-width) */
 .sf-card--wide {
-    background: #fff8e1;
+    background: #7C3AED;
     padding: 1.8rem 2.2rem 2rem;
     display: flex;
     flex-direction: column;
@@ -3339,7 +3341,15 @@ input, textarea, select {
 /* Light theme */
 [data-theme="light"] .sf-card__body,
 [data-theme="light"] .sf-card--wide {
-    background: #fff8e1;
+    background: #7C3AED;
+}
+
+[data-theme="light"] .sf-card__title {
+    color: #fff;
+}
+
+[data-theme="light"] .sf-card__desc {
+    color: rgba(255, 255, 255, 0.7);
 }
 
 [data-theme="light"] .sf-pill {
@@ -3440,9 +3450,9 @@ input, textarea, select {
     font-family: var(--font-display);
     font-size: 0.72rem;
     font-weight: 600;
-    color: rgba(200, 180, 255, 0.8);
-    background: rgba(100, 70, 180, 0.15);
-    border: 1px solid rgba(140, 100, 220, 0.25);
+    color: rgba(200, 180, 255, 1);
+    background: rgba(100, 70, 180, 1);
+    border: 1px solid rgba(100, 70, 180, 1);
     border-radius: 6px;
     padding: 0.25rem 0.65rem;
 }
@@ -3493,9 +3503,9 @@ input, textarea, select {
 }
 
 [data-theme="light"] .system-card-num {
-    background: rgba(255, 255, 255, 0.9);
-    border-color: rgba(0, 0, 0, 0.1);
-    color: #0d0d0d;
+    background: #7C3AED;
+    border-color: #7C3AED;
+    color: #fff;
 }
 
 [data-theme="light"] .system-pill {
