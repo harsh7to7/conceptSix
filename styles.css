@@ -120,13 +120,7 @@
 }
 
 [data-theme="light"] .about-feature,
-[data-theme="light"] .system-card {
-    background: #ffffff;
-    border-color: rgba(0, 0, 0, 0.06);
-}
-
-[data-theme="light"] .about-feature:hover,
-[data-theme="light"] .system-card:hover {
+[data-theme="light"] .about-feature:hover {
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
 }
 
@@ -2127,6 +2121,7 @@ input, textarea, select {
 .testi-btn {
     width: 48px;
     height: 48px;
+    max-width: 48px;
     border-radius: 50%;
     border: 1px solid var(--border-hover);
     background: var(--bg-elevated);
@@ -3447,13 +3442,15 @@ input, textarea, select {
 }
 
 .system-card {
-    background: #161625;
+    position: relative;
     border-radius: 16px;
     overflow: hidden;
     transition: transform 0.4s var(--ease-out), border-color 0.4s;
     border: 1px solid rgba(255, 255, 255, 0.05);
+    aspect-ratio: 1 / 1;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .system-card:hover {
@@ -3461,11 +3458,21 @@ input, textarea, select {
     border-color: rgba(255, 255, 255, 0.1);
 }
 
+.system-card-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    filter: brightness(0.35);
+}
+
 .system-card-num {
     position: absolute;
     top: 14px;
     left: 14px;
-    z-index: 2;
+    z-index: 3;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -3479,15 +3486,17 @@ input, textarea, select {
     padding: 0.25rem 0.65rem;
 }
 
-.system-card-img {
-    width: 100%;
-    aspect-ratio: 16 / 10;
-    overflow: hidden;
+.system-card-reel {
     position: relative;
+    z-index: 2;
+    width: 55%;
+    aspect-ratio: 9 / 16;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
 }
 
-.system-card-img video,
-.system-card-img img {
+.system-card-reel video {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -3495,14 +3504,20 @@ input, textarea, select {
 }
 
 .system-card-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
     padding: 1.3rem 1.5rem 1.5rem;
+    z-index: 3;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
 }
 
 .system-card-title {
     font-family: var(--font-display);
     font-size: 1.25rem;
     font-weight: 900;
-    color: var(--white);
+    color: #fff;
     text-transform: uppercase;
     margin-bottom: 0.5rem;
     letter-spacing: 0.01em;
@@ -3512,22 +3527,29 @@ input, textarea, select {
 .system-card-desc {
     font-size: 0.85rem;
     line-height: 1.55;
-    color: var(--text);
+    color: rgba(255, 255, 255, 0.8);
 }
 
 [data-theme="light"] .system-card {
-    background: #ffffff;
-    border-color: rgba(0, 0, 0, 0.06);
+    border-color: rgba(0, 0, 0, 0.08);
 }
 
 [data-theme="light"] .system-card:hover {
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
 }
 
 [data-theme="light"] .system-card-num {
     background: #7C3AED;
     border-color: #7C3AED;
     color: #fff;
+}
+
+[data-theme="light"] .system-card-title {
+    color: #fff;
+}
+
+[data-theme="light"] .system-card-desc {
+    color: rgba(255, 255, 255, 0.8);
 }
 
 [data-theme="light"] .system-pill {
