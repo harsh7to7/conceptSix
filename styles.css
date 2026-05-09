@@ -1772,8 +1772,8 @@ input, textarea, select {
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: #0d0d0d;
-    background: var(--accent);
+    color: #fff;
+    background: #7C3AED;
     padding: 0.3rem 0.8rem;
     border-radius: 50px;
     margin-bottom: 0.8rem;
