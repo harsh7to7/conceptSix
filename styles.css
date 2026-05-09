@@ -201,6 +201,10 @@
     border-color: rgba(255, 209, 0, 1);
 }
 
+[data-theme="light"] .contact {
+    background: linear-gradient(180deg, rgba(168, 85, 247, 0.06) 0%, rgba(13, 13, 13, 0.6) 60%, #0d0d0d 100%);
+}
+
 [data-theme="light"] .footer {
     background: #0d0d0d;
     color: #b0ada6;
@@ -1516,17 +1520,18 @@ input, textarea, select {
 .svc-panel-tags span {
     font-size: 0.8rem;
     font-weight: 500;
-    color: var(--text);
-    background: var(--bg-elevated);
-    border: 1px solid var(--border);
+    color: #111;
+    background: var(--accent);
+    border: 1px solid var(--accent);
     padding: 0.5rem 1.2rem;
     border-radius: 100px;
     transition: all 0.3s;
 }
 
 .svc-panel-tags span:hover {
-    border-color: var(--accent);
-    color: var(--accent);
+    background: #c4a800;
+    border-color: #c4a800;
+    color: #111;
 }
 
 [data-theme="light"] .svc-panel-card {
@@ -1535,8 +1540,9 @@ input, textarea, select {
 }
 
 [data-theme="light"] .svc-panel-tags span {
-    background: #fff;
-    border-color: rgba(0, 0, 0, 0.08);
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #111;
 }
 
 @media (max-width: 768px) {
@@ -2519,7 +2525,8 @@ input, textarea, select {
 .contact {
     position: relative;
     overflow: hidden;
-    background: linear-gradient(135deg, rgba(168, 85, 247, 0.08) 0%, rgba(255, 209, 0, 0.06) 50%, rgba(168, 85, 247, 0.04) 100%);
+    background: linear-gradient(180deg, rgba(168, 85, 247, 0.08) 0%, rgba(10, 10, 10, 0.6) 60%, #0a0a0a 100%);
+    padding-bottom: 0;
 }
 
 .contact::before {
@@ -2763,7 +2770,7 @@ input, textarea, select {
 .footer {
     padding: 5rem 0 2rem;
     background: #0a0a0a;
-    border-top: 1px solid var(--border);
+    border-top: none;
 }
 
 [data-theme="light"] .footer {
