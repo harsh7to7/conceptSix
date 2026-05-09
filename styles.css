@@ -827,10 +827,10 @@ input, textarea, select {
 }
 
 .hero-badge-pill span {
-    font-size: 0.75rem;
-    font-weight: 500;
+    font-size: 0.7rem;
+    font-weight: 600;
     letter-spacing: 0.08em;
-    color: rgba(255, 255, 255, 0.7);
+    color: #fff;
 }
 
 /* Hero title */
@@ -1466,21 +1466,31 @@ input, textarea, select {
 }
 
 .svc-panel-card {
-    background: var(--bg-elevated);
-    border: 1px solid var(--border);
+    position: relative;
     border-radius: 20px;
     overflow: hidden;
     max-width: 700px;
     width: 100%;
+    padding: 2rem;
+    text-align: center;
+    background:
+        linear-gradient(135deg, rgba(124, 58, 237, 0.15) 0%, rgba(168, 85, 247, 0.08) 50%, rgba(255, 209, 0, 0.06) 100%),
+        var(--bg-elevated);
+    border: 1px solid rgba(124, 58, 237, 0.15);
+    backdrop-filter: blur(10px);
 }
 
 .svc-panel-tag {
-    display: block;
-    font-size: 0.75rem;
-    font-weight: 500;
-    color: var(--accent);
-    padding: 1.5rem 1.5rem 0;
-    letter-spacing: 0.05em;
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #fff;
+    background: #7C3AED;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+    margin-bottom: 0.5rem;
 }
 
 .svc-panel-title {
@@ -1488,12 +1498,16 @@ input, textarea, select {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--text-bright);
-    padding: 0.3rem 1.5rem 1rem;
+    margin-bottom: 1rem;
 }
 
 .svc-panel-media {
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 9 / 16;
+    max-height: 480px;
     overflow: hidden;
+    border-radius: 12px;
+    margin: 0 auto;
+    width: fit-content;
 }
 
 .svc-panel-media video,
@@ -1529,8 +1543,10 @@ input, textarea, select {
 }
 
 [data-theme="light"] .svc-panel-card {
-    background: #fff;
-    border-color: rgba(0, 0, 0, 0.06);
+    background:
+        linear-gradient(135deg, rgba(124, 58, 237, 0.08) 0%, rgba(168, 85, 247, 0.04) 50%, rgba(255, 209, 0, 0.03) 100%),
+        #fff;
+    border-color: rgba(124, 58, 237, 0.12);
 }
 
 [data-theme="light"] .svc-panel-tags span {
@@ -2051,8 +2067,8 @@ input, textarea, select {
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--purple);
-    background: rgba(168, 85, 247, 0.1);
+    color: #fff;
+    background: #7C3AED;
     padding: 0.3rem 0.8rem;
     border-radius: 50px;
     margin-bottom: 1rem;
@@ -3590,15 +3606,15 @@ input, textarea, select {
 
 .framework-badge {
     display: inline-block;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 600;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--purple);
-    background: rgba(168, 85, 247, 0.1);
-    border: 1px solid rgba(168, 85, 247, 0.2);
-    padding: 0.5rem 1.5rem;
-    border-radius: 100px;
+    color: #fff;
+    background: #7C3AED;
+    border: none;
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
     margin-bottom: 1.5rem;
 }
 
@@ -3749,7 +3765,8 @@ input, textarea, select {
 }
 
 [data-theme="light"] .framework-badge {
-    background: rgba(168, 85, 247, 0.06);
+    background: #7C3AED;
+    color: #fff;
 }
 
 /* ---- BRANDS MARQUEE ---- */
