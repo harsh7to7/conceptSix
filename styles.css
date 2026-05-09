@@ -3279,6 +3279,7 @@ input, textarea, select {
 
 .sf-card--wide .sf-icon {
     margin-bottom: auto;
+    color: #111;
 }
 
 .sf-card--wide__bottom {
