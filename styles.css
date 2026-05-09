@@ -2487,8 +2487,8 @@ input, textarea, select {
 
 .swipe-arrow {
     position: absolute;
-    height: 54px;
-    width: 54px;
+    height: 48px;
+    width: 48px;
     z-index: 2;
     bottom: 24px;
     right: 24px;
@@ -2695,7 +2695,7 @@ input, textarea, select {
 
 .form-row {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 1.2rem;
 }
 
