@@ -3483,6 +3483,7 @@ input, textarea, select {
     object-fit: cover;
     z-index: 0;
     filter: brightness(0.35);
+    display: none;
 }
 
 .system-card-num {
