@@ -1390,15 +1390,15 @@ input, textarea, select {
 
 .services-header {
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .services-title {
     font-family: var(--font-display);
-    font-size: clamp(2.2rem, 4.5vw, 4rem);
+    font-size: clamp(1.8rem, 3.5vw, 3rem);
     font-weight: 800;
     color: var(--text-bright);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
 }
 
 .services-sub {
@@ -2307,9 +2307,9 @@ input, textarea, select {
 }
 
 .brands-trust {
-    background: linear-gradient(180deg, rgba(168, 85, 247, 0.03) 0%, rgba(168, 85, 247, 0.12) 50%, rgba(168, 85, 247, 0.03) 100%);
+    background: linear-gradient(180deg, rgba(168, 85, 247, 0.03) 0%, rgba(168, 85, 247, 0.12) 50%, var(--bg) 100%);
     overflow: hidden;
-    padding-bottom: 8rem;
+    padding-bottom: 0;
 }
 
 /* Client Logos Slider */
@@ -3846,7 +3846,7 @@ input, textarea, select {
         gap: 1rem;
     }
     .brands-trust {
-        padding-bottom: 5rem;
+        padding-bottom: 0;
     }
     .brand-item img {
         width: 80px;
