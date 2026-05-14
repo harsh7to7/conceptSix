@@ -3169,7 +3169,7 @@ input, textarea, select {
 
 /* ---- BUILT FOR EXPERTS ---- */
 /* ---- STAND FOR (What We Stand For) ---- */
-.standfor { background: var(--bg); }
+.standfor { background: linear-gradient(180deg, var(--bg) 0%, rgba(168, 85, 247, 0.03) 100%); padding-bottom: 0; }
 
 .sf-header {
     text-align: center;
@@ -3416,7 +3416,7 @@ input, textarea, select {
 }
 
 /* ---- HOW THE SYSTEM RUNS ---- */
-.system { background: var(--bg); }
+.system { background: linear-gradient(180deg, rgba(168, 85, 247, 0.03) 0%, rgba(168, 85, 247, 0.12) 50%, var(--bg) 100%); padding-bottom: 0; }
 
 .system-header {
     text-align: center;
