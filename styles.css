@@ -2537,6 +2537,7 @@ input, textarea, select {
     position: relative;
     overflow: hidden;
     background: linear-gradient(180deg, rgba(168, 85, 247, 0.08) 0%, rgba(10, 10, 10, 0.6) 60%, #0a0a0a 100%);
+    padding-top: 6rem;
     padding-bottom: 0;
 }
 
@@ -3858,8 +3859,9 @@ input, textarea, select {
 
 /* ---- TESTIMONIAL SLIDER ---- */
 .testimonial-reels {
-    background: linear-gradient(180deg, rgba(168, 85, 247, 0.03) 0%, rgba(168, 85, 247, 0.12) 50%, rgba(168, 85, 247, 0.03) 100%);
+    background: linear-gradient(180deg, rgba(168, 85, 247, 0.03) 0%, rgba(168, 85, 247, 0.12) 50%, rgba(168, 85, 247, 0.08) 100%);
     padding: 6rem 0;
+    padding-bottom: 0;
     overflow: hidden;
 }
 
